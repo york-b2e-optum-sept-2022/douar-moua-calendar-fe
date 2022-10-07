@@ -9,8 +9,8 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  foundAccountByUsername(loginUserName: string){
-    return this.httpClient.get('http://localhost:3000/accounts?username=' + loginUserName)
+  foundAccountByUsername(loginInput: IAccounts){
+    return this.httpClient.get('http://localhost:3000/accounts?username=' + loginInput.username)
   }
 
 }

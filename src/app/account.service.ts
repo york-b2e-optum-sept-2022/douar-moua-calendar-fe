@@ -14,17 +14,20 @@ export class AccountService {
   constructor(private httpService: HttpService) { }
 
   onLogin(loginInput: IAccounts){
+    //if login username input is blank alert user
     if (loginInput.username == ''){
       alert('Invalid username')
       return;
     }
 
+    //if login password input is blank alert user
     if (loginInput.password == ''){
       alert('Invalid password')
       return;
     }
 
-    this.httpService.foundAccountByUsername(loginInput.username)
+    //validate password
+    this.httpService.foundAccountByUsername(loginInput)
     this.$isLoggedIn.next(this.isLoggedIn)
   }
 
