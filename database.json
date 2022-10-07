@@ -4,6 +4,11 @@
       "userId": "1",
       "username": "admin",
       "password": "admin"
+    },
+    {
+      "userId": "2",
+      "username": "test",
+      "password": "test"
     }
   ],
   "events": [
