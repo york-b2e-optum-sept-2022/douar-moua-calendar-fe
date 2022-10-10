@@ -1,10 +1,10 @@
 <div class="card m-3 shadow" style="width: 20rem">
   <div class="card-header">
-    <h3>Event Date: </h3>
+    <h3>Event Date: {{event.eventDate | date}} </h3>
   </div>
   <div class="card-body">
-    <div>Event Name: </div>
-    <div>Invite List: </div>
+    <div>Event Name: {{event.eventName}}</div>
+    <div>Invite List: {{event.inviteList}}</div>
   </div>
   <div class="card-footer d-flex justify-content-evenly">
     <button class="btn btn-danger">Delete Event</button>

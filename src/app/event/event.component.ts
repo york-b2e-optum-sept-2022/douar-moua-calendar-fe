@@ -1,4 +1,5 @@
-import {Component,} from '@angular/core';
+import {Component, Input,} from '@angular/core';
+import {IEvents} from "../_interfaces/IEvents";
 
 @Component({
   selector: 'app-event',
@@ -6,6 +7,8 @@ import {Component,} from '@angular/core';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent {
+
+  @Input() event!: IEvents;
 
 
   constructor() { }

@@ -1,2 +1,5 @@
 <h1 class="m-3">Event-List-Comp: Event List</h1>
-<app-event></app-event>
+<app-event
+  *ngFor="let event of eventsList"
+  [event] = "event"
+></app-event>
