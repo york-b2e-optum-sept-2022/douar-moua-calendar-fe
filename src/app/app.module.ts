@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EventComponent } from './event/event.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EventComponent } from './event/event.component';
     LoginComponent,
     CreateAccountComponent,
     NavBarComponent,
-    EventComponent
+    EventComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,
