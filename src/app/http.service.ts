@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IAccounts} from "./_interfaces/IAccounts";
 import {Observable} from "rxjs";
+import {IEvents} from "./_interfaces/IEvents";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,11 @@ export class HttpService {
   registerAccount(newAccount: IAccounts){
     return this.httpClient.post('http://localhost:3000/accounts', newAccount
     ) as Observable<IAccounts>;
+  }
+
+  getEventList(){
+    return this.httpClient.get('http://localhost:3000/events'
+    ) as Observable<IEvents[]>
   }
 
 }
