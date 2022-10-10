@@ -1,12 +1,12 @@
 {
   "accounts": [
     {
-      "userId": "1",
+      "id": "1",
       "username": "admin",
       "password": "admin"
     },
     {
-      "userId": "2",
+      "id": "2",
       "username": "test",
       "password": "test"
     },
@@ -18,7 +18,7 @@
   ],
   "events": [
     {
-      "userId": "1",
+      "id": "1",
       "eventId": "1",
       "eventName": "eventName",
       "eventDate": "1/1/2022",
@@ -27,7 +27,7 @@
   ],
   "invitations": [
     {
-      "eventId": "1",
+      "id": "1",
       "userName": "user1",
       "eventName": "eventName",
       "eventDate": "1/1/2022"

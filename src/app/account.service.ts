@@ -18,6 +18,10 @@ export class AccountService {
 
   constructor(private httpService: HttpService) { }
 
+  onLogOut(){
+    this.$isLoggedIn.next(!this.isLoggedIn)
+  }
+
   onLogin(loginInput: IAccounts){
     //if login username input is blank alert user
     if (loginInput.username == ''){
