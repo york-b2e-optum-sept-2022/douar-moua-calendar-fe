@@ -10,7 +10,7 @@ import {Subscription} from "rxjs";
 export class AppComponent implements OnDestroy {
   title = 'douar-moua-calendar-fe';
 
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
   loginSub: Subscription;
 
   constructor(private accountService: AccountService) {

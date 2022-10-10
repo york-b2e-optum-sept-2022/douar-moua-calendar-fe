@@ -1,9 +1,13 @@
-<app-nav-bar *ngIf="isLoggedIn == true"></app-nav-bar>
-
-<div *ngIf="isLoggedIn == false" class="text-center m-5">
-  <h1 class="display-1">Manage Events & Invites</h1>
+<div *ngIf="isLoggedIn == false">
+  <div class="text-center m-5">
+    <h1 class="display-1">Manage Events & Invites</h1>
+  </div>
+  <app-login></app-login>
+  <app-create-account></app-create-account>
 </div>
 
+<div *ngIf="isLoggedIn == true">
+  <app-nav-bar></app-nav-bar>
+  <app-event-list></app-event-list>
+</div>
 
-<app-login *ngIf="isLoggedIn == false"></app-login>
-<app-create-account *ngIf="isLoggedIn == false"></app-create-account>
