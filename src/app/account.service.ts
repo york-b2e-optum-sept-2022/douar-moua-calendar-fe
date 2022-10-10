@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {IAccounts} from "./_interfaces/IAccounts";
-import {Subject} from "rxjs";
+import {first, Subject} from "rxjs";
+// @ts-ignore
+import {v4 as uuid} from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ export class AccountService {
   $isLoggedIn = new Subject<boolean>();
 
   $foundAccount = new Subject<IAccounts>();
+  $account = new Subject<IAccounts>();
 
   constructor(private httpService: HttpService) { }
 
@@ -28,7 +31,8 @@ export class AccountService {
       return;
     }
 
-    this.httpService.foundAccountByUsername(loginInput).subscribe({
+    //password validation & login facilitation
+    this.httpService.foundAccount(loginInput).pipe(first()).subscribe({
       next: (accountList) => {
 
         //validate password
@@ -49,4 +53,48 @@ export class AccountService {
     })
   }
 
+  onCreateAccount(newAccount: IAccounts){
+    //validate new usesrname requirements
+    if (newAccount.username === '' || newAccount.username.length < 5){
+      alert("Username must have more than 4 characters")
+      return;
+    }
+    //validate new password requirements
+    if (newAccount.password === '' || newAccount.password.length < 5){
+      alert("Password must have more than 4 characters")
+      return;
+    }
+
+    this.httpService.foundAccount(newAccount).pipe(first()).subscribe({
+      next: (accountList) => {
+        if (accountList.length > 0) {
+          alert("Username already exists")
+          return;
+        }
+
+        //all validation has passed, give new account an userID
+        const account: IAccounts = {
+          userID: uuid(),
+          username: newAccount.username,
+          password: newAccount.password
+        }
+
+        //add new account to database & create observable for subscription purposes
+        this.httpService.registerAccount(account).pipe(first()).subscribe({
+          next: (account) => {
+            this.$account.next(account)
+            alert("You've successfully created an account! Login to begin!")
+          },
+          error: (err) => {
+            console.error(err)
+            alert('Unable to create your account. Please try again later')
+          }
+        });
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to create account. Please try again later')
+      }
+    })
+  }
 }

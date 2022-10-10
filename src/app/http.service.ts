@@ -10,9 +10,14 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  foundAccountByUsername(loginInput: IAccounts){
+  foundAccount(loginInput: IAccounts){
     return this.httpClient.get('http://localhost:3000/accounts?username=' + loginInput.username
     ) as Observable<IAccounts[]>
+  }
+
+  registerAccount(newAccount: IAccounts){
+    return this.httpClient.post('http://localhost:3000/accounts', newAccount
+    ) as Observable<IAccounts>;
   }
 
 }

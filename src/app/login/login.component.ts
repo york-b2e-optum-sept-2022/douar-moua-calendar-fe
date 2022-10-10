@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  } from '@angular/core';
 import {IAccounts} from "../_interfaces/IAccounts";
 import {AccountService} from "../account.service";
 
@@ -7,9 +7,9 @@ import {AccountService} from "../account.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  foundAccount: IAccounts = {
+  loginAccount: IAccounts = {
     userID: "",
     username: "",
     password: ""
@@ -17,11 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private accountService: AccountService) { }
 
-  ngOnInit(): void {
-  }
-
   onLoginClick(){
-    this.accountService.onLogin(this.foundAccount)
+    this.accountService.onLogin(this.loginAccount)
   }
 
 }
