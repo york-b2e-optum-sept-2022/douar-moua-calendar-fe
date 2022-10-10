@@ -1,5 +1,9 @@
-<h1 class="m-3">Event-List-Comp: Event List</h1>
-<app-event
-  *ngFor="let event of eventsList"
-  [event] = "event"
-></app-event>
+<div class="border shadow m-3">
+  <h1 class="display-3 text-center m-3">List of Events</h1>
+  <div class="d-flex flex-wrap justify-content-evenly m-3">
+    <app-event
+      *ngFor="let event of eventsList"
+      [event] = "event"
+    ></app-event>
+  </div>
+</div>

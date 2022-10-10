@@ -23,6 +23,13 @@
       "eventName": "eventName",
       "eventDate": "1/1/2022",
       "invitations": []
+    },
+    {
+      "id": "2",
+      "eventId": "2",
+      "eventName": "newEvent!",
+      "eventDate": "2/2/2022",
+      "invitations": []
     }
   ],
   "invitations": [
