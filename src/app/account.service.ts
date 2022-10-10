@@ -54,7 +54,7 @@ export class AccountService {
   }
 
   onCreateAccount(newAccount: IAccounts){
-    //validate new usesrname requirements
+    //validate new username requirements
     if (newAccount.username === '' || newAccount.username.length < 5){
       alert("Username must have more than 4 characters")
       return;
@@ -67,21 +67,23 @@ export class AccountService {
 
     this.httpService.foundAccount(newAccount).pipe(first()).subscribe({
       next: (accountList) => {
+        // console.log('accountList: ', accountList)
         if (accountList.length > 0) {
           alert("Username already exists")
-          return;
         }
 
         //all validation has passed, give new account an userID
         const account: IAccounts = {
-          userID: uuid(),
+          id: uuid(),
           username: newAccount.username,
           password: newAccount.password
         }
+        console.log('account: ', typeof account, account)
 
         //add new account to database & create observable for subscription purposes
         this.httpService.registerAccount(account).pipe(first()).subscribe({
           next: (account) => {
+            console.log(account)
             this.$account.next(account)
             alert("You've successfully created an account! Login to begin!")
           },
@@ -97,4 +99,7 @@ export class AccountService {
       }
     })
   }
+
+
+
 }

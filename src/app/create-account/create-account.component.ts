@@ -10,7 +10,7 @@ import {IAccounts} from "../_interfaces/IAccounts";
 export class CreateAccountComponent {
 
   newAccount: IAccounts = {
-    userID: "",
+    id: "",
     username: "",
     password: ""
   }

@@ -21,7 +21,6 @@ export class AppComponent implements OnDestroy {
 
   }
 
-
   ngOnDestroy(){
     this.loginSub.unsubscribe()
   }

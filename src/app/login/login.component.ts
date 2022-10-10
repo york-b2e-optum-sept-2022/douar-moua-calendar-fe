@@ -10,7 +10,7 @@ import {AccountService} from "../account.service";
 export class LoginComponent {
 
   loginAccount: IAccounts = {
-    userID: "",
+    id: "",
     username: "",
     password: ""
   }

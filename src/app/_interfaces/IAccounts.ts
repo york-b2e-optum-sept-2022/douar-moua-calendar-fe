@@ -1,5 +1,5 @@
 export interface IAccounts{
-  userID: string
+  id: string
   username: string
   password: string
 }

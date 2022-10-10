@@ -9,6 +9,11 @@
       "userId": "2",
       "username": "test",
       "password": "test"
+    },
+    {
+      "id": "17ceea84-de2b-4911-b5a0-35df650f873d",
+      "username": "username",
+      "password": "username"
     }
   ],
   "events": [
