@@ -24,7 +24,7 @@ export class EventService {
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
     //get event list from httpService
-    this.httpService.getEventList().pipe(first()).subscribe({
+    this.httpService.getEventList().subscribe({
       next: eventsList => {
         this.eventList = eventsList
         this.$eventList.next(eventsList)
@@ -53,7 +53,7 @@ export class EventService {
       id: this.currentUserId,
       eventID: uuid(),
       eventName: newEvent.eventName,
-      eventDate: new Date(newEvent.eventDate),
+      eventDate: newEvent.eventDate,
     }
 
     this.httpService.createEvent(event).pipe().subscribe({

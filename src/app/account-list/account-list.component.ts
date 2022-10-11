@@ -29,10 +29,6 @@ export class AccountListComponent implements OnDestroy{
     })
   }
 
-  onCreateEvent(){
-
-  }
-
   ngOnDestroy() {
     this.accountListSub.unsubscribe()
   }
