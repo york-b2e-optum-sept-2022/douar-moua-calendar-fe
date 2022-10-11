@@ -14,6 +14,11 @@
       "id": "17ceea84-de2b-4911-b5a0-35df650f873d",
       "username": "username",
       "password": "username"
+    },
+    {
+      "id": "ab479ac2-672d-4c89-858e-1c262a0c70c2",
+      "username": "newusername",
+      "password": "newusername"
     }
   ],
   "events": [
