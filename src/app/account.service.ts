@@ -16,7 +16,24 @@ export class AccountService {
   $foundAccount = new Subject<IAccounts>();
   $account = new Subject<IAccounts>();
 
-  constructor(private httpService: HttpService) { }
+  accountList: IAccounts[] = [];
+  $accountList = new Subject<IAccounts[]>();
+
+  constructor(private httpService: HttpService) {
+
+    //get account list from http service
+    this.httpService.getAccountList().pipe(first()).subscribe({
+      next: (accountList) => {
+        this.accountList = accountList
+        this.$accountList.next(accountList)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to get list of users. Please try again later.')
+      }
+    })
+
+  }
 
   onLogOut(){
     this.$isLoggedIn.next(!this.isLoggedIn)

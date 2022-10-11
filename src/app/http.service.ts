@@ -21,6 +21,11 @@ export class HttpService {
     ) as Observable<IAccounts>;
   }
 
+  getAccountList(){
+    return this.httpClient.get('http://localhost:3000/accounts'
+    ) as Observable<IAccounts[]>
+  }
+
   getEventList(){
     return this.httpClient.get('http://localhost:3000/events'
     ) as Observable<IEvents[]>

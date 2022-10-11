@@ -12,6 +12,8 @@ export class EventService {
   $eventList = new Subject<IEvents[]>();
 
   constructor(private httpService: HttpService) {
+
+    //get event list from httpService
     this.httpService.getEventList().pipe(first()).subscribe({
       next: eventsList => {
         this.eventList = eventsList
@@ -22,5 +24,6 @@ export class EventService {
         alert('Unable to get list of events. Please try again later.')
       }
     })
+
   }
 }
