@@ -19,11 +19,15 @@ export class NavBarComponent {
   userAccountSub: Subscription;
 
   constructor(private accountService: AccountService) {
-    this.userAccountSub = this.accountService.$foundAccount.subscribe(account => {
-      this.userAccount = account
-      console.log(account)
-      console.log(this.userAccount)
-    });
+    this.userAccountSub = this.accountService.$foundAccount.subscribe({
+      next: (account) => {
+        this.userAccount = account
+      },
+      error: (err) => {
+        console.log(err)
+        alert('Unable to find your account. Please try again later.')
+      }
+    })
   }
 
   onLogOutClick(){

@@ -10,7 +10,6 @@ export class EventComponent {
 
   @Input() event!: IEvents;
 
-
   constructor() { }
 
 }
