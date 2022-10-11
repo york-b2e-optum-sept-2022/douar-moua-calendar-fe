@@ -17,6 +17,9 @@ export class EventService {
   $eventList = new Subject<IEvents[]>();
 
   currentUser!: IAccounts;
+  currentUserId: string = '';
+
+  $event = new Subject<IEvents>();
 
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
@@ -36,6 +39,7 @@ export class EventService {
     this.accountService.$foundAccount.pipe(first()).subscribe({
       next: currentUser => {
         this.currentUser = currentUser
+        this.currentUserId = currentUser.id
       },
       error: (err) => {
         console.error(err)
@@ -46,15 +50,20 @@ export class EventService {
 
   createEvent(newEvent: IEvents){
     const event: IEvents = {
-      id: this.currentUser.id,
+      id: this.currentUserId,
       eventID: uuid(),
       eventName: newEvent.eventName,
-      eventDate: newEvent.eventDate,
+      eventDate: new Date(newEvent.eventDate),
     }
 
     this.httpService.createEvent(event).pipe().subscribe({
-      next: () => {},
-      error: () => {}
+      next: (addedEvent) => {
+        this.$event.next(addedEvent)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to create a new event. Please try again later.')
+      }
     })
   }
 

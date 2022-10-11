@@ -9,12 +9,16 @@ import {EventService} from "../event.service";
 })
 export class CreateEventComponent {
 
-  newEvent!: IEvents;
+  newEvent: IEvents = {
+    id: '',
+    eventID: '',
+    eventName: '',
+    eventDate: new Date(),
+  }
 
   constructor(private eventService:EventService) { }
 
   onCreateEventClick(){
-    this.newEvent.eventDate = new Date(this.newEvent.eventDate)
     this.eventService.createEvent(this.newEvent)
   }
 

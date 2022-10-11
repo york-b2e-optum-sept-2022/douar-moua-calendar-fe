@@ -104,7 +104,6 @@ export class AccountService {
         //add new account to database & create observable for subscription purposes
         this.httpService.registerAccount(account).pipe(first()).subscribe({
           next: (account) => {
-            console.log(account)
             this.$account.next(account)
             alert("You've successfully created an account! Login to begin!")
           },
