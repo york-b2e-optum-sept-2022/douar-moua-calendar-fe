@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, } from '@angular/core';
+import {IEvents} from "../_interfaces/IEvents";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-create-event',
@@ -7,8 +9,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreateEventComponent {
 
+  newEvent!: IEvents;
 
-  constructor() { }
+  constructor(private eventService:EventService) { }
 
+  onCreateEventClick(){
+    this.newEvent.eventDate = new Date(this.newEvent.eventDate)
+    this.eventService.createEvent(this.newEvent)
+  }
 
 }

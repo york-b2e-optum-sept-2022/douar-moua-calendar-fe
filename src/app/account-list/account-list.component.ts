@@ -16,7 +16,7 @@ export class AccountListComponent implements OnDestroy{
 
   constructor(private accountService:AccountService) {
 
-    //get account list from account service
+    //get account list from account service, new array of just usernames
     this.accountListSub = this.accountService.$accountList.subscribe({
       next: (accountList) => {
         this.accountList = accountList
@@ -27,6 +27,9 @@ export class AccountListComponent implements OnDestroy{
         alert('Unable to get list of users. Please try again later.')
       }
     })
+  }
+
+  onCreateEvent(){
 
   }
 

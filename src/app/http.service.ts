@@ -31,4 +31,9 @@ export class HttpService {
     ) as Observable<IEvents[]>
   }
 
+  createEvent(newEvent: IEvents){
+    return this.httpClient.post('http://localhost:3000/events', newEvent
+      ) as Observable<IEvents>;
+  }
+
 }
