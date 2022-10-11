@@ -12,7 +12,7 @@ export class AccountListComponent implements OnDestroy{
 
   accountList: IAccounts[] = [];
   accountListSub: Subscription;
-  userList!: IAccounts["username"][];
+  users!: IAccounts["username"][];
 
   constructor(private accountService:AccountService) {
 
@@ -20,7 +20,7 @@ export class AccountListComponent implements OnDestroy{
     this.accountListSub = this.accountService.$accountList.subscribe({
       next: (accountList) => {
         this.accountList = accountList
-        this.userList = accountList.map(IAccount => IAccount.username)
+        this.users = accountList.map(IAccount => IAccount.username)
       },
       error: (err) => {
         console.error(err)
