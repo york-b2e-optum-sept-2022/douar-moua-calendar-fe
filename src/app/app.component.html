@@ -8,7 +8,13 @@
 
 <div *ngIf="isLoggedIn == true">
   <app-nav-bar></app-nav-bar>
-  <app-create-event></app-create-event>
+</div>
+
+<div *ngIf="isLoggedIn == true && isCreatingEvent == false">
   <app-event-list></app-event-list>
+</div>
+
+<div *ngIf="isLoggedIn == true && isCreatingEvent == true">
+  <app-create-event></app-create-event>
 </div>
 

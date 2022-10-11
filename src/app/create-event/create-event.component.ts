@@ -22,4 +22,8 @@ export class CreateEventComponent {
     this.eventService.createEvent(this.newEvent)
   }
 
+  onCancelCreateEventClick(){
+    this.eventService.cancelCreateEventClick()
+  }
+
 }

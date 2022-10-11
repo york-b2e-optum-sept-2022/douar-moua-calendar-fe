@@ -29,6 +29,10 @@ export class EventListComponent implements OnDestroy {
 
   }
 
+  onCreateEventClick(){
+    this.eventService.createEventClick()
+  }
+
   ngOnDestroy() {
     this.eventListSub.unsubscribe()
   }

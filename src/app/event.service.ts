@@ -13,6 +13,9 @@ import {v4 as uuid} from 'uuid';
 })
 export class EventService {
 
+  isCreatingEvent: boolean = true;
+  $isCreatingEvent = new Subject<boolean>()
+
   eventList: IEvents[] = []
   $eventList = new Subject<IEvents[]>();
 
@@ -48,7 +51,20 @@ export class EventService {
     });
   }
 
+  //toggle create
+  createEventClick(){
+    this.$isCreatingEvent.next(this.isCreatingEvent)
+  }
+  cancelCreateEventClick(){
+    this.$isCreatingEvent.next(!this.isCreatingEvent)
+  }
+
   createEvent(newEvent: IEvents){
+    if (newEvent.eventDate == null){
+      alert('Must include a date')
+      return;
+    }
+
     const event: IEvents = {
       id: this.currentUserId,
       eventID: uuid(),
