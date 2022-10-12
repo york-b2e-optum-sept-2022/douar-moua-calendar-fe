@@ -41,9 +41,13 @@ export class HttpService {
       ) as Observable<IEvents>;
   }
 
-  getCurrentUserEventList(currentUserId: string){
-    return this.httpClient.get('http://localhost:3000/events?eventCreatorId=' + currentUserId,
-    ) as Observable<IEvents[]>
+  deleteEvent(){
+    return this.httpClient.delete('http://localhost:3000/events?id=')
   }
+
+  // getCurrentUserEventList(currentUserId: string){
+  //   return this.httpClient.get('http://localhost:3000/events?eventCreatorId=' + currentUserId,
+  //   ) as Observable<IEvents[]>
+  // }
 
 }

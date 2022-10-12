@@ -13,4 +13,8 @@ export class EventComponent {
 
   constructor(private eventService: EventService) { }
 
+  onDeleteClick(){
+
+  }
+
 }

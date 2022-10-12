@@ -92,4 +92,8 @@ export class EventService {
     })
   }
 
+  deleteEvent(){
+
+  }
+
 }
