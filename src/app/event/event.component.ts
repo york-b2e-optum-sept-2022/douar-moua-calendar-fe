@@ -8,7 +8,7 @@ import {IEvents} from "../_interfaces/IEvents";
 })
 export class EventComponent {
 
-  @Input() event!: IEvents;
+  @Input() currentUserEvent!: IEvents;
 
   constructor() { }
 

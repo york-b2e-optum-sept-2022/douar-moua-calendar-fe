@@ -4,6 +4,7 @@ import {IAccounts} from "./_interfaces/IAccounts";
 import {first, Subject} from "rxjs";
 // @ts-ignore
 import {v4 as uuid} from 'uuid';
+import {EventService} from "./event.service";
 
 @Injectable({
   providedIn: 'root'
@@ -64,11 +65,10 @@ export class AccountService {
           alert('Invalid login')
           return;
         }
-        //if password is correct, login & pass found account info to
+        //if password is correct, toggle log in, broadcast/emit current user info
         this.$isLoggedIn.next(this.isLoggedIn)
         this.$foundAccount.next(foundAccount)
         this.$currentUserName.next(foundAccount.username)
-        console.log('found account: ', foundAccount)
       },
       error: (err) => {
         console.error(err)

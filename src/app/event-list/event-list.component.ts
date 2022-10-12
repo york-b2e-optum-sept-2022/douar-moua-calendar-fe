@@ -14,9 +14,11 @@ export class EventListComponent implements OnDestroy {
   eventsList: IEvents[] = []
   eventListSub: Subscription;
 
+  // currentUserEventList: IEvents[] = []
+
   constructor(private eventService: EventService) {
 
-    //get event list from event service
+    // get event list from event service
     this.eventListSub = this.eventService.$eventList.subscribe({
       next: (eventList) => {
         this.eventsList = eventList
@@ -25,7 +27,19 @@ export class EventListComponent implements OnDestroy {
         console.error(err)
           alert('Unable to get list of events. Please try again later.')
       }
-    })
+    });
+
+    //TODO figure out how to get current user event list & Unsubscribe
+    // this.eventService.$currentUserEventList.subscribe({
+    //   next: (currentUserEventList) => {
+    //     this.currentUserEventList = currentUserEventList
+    //     console.log(currentUserEventList)
+    //   },
+    //   error: (err) => {
+    //     console.error(err)
+    //     alert('Unable to retrieve your events. Please try again later')
+    //   }
+    // });
 
   }
 

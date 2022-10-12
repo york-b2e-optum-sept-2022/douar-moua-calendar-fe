@@ -11,7 +11,7 @@ import {EventService} from "./event.service";
 export class AppComponent implements OnDestroy {
   title = 'douar-moua-calendar-fe';
 
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean = false;
   loginSub: Subscription;
 
   isCreatingEvent: boolean = false

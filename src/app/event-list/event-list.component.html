@@ -8,7 +8,7 @@
   <div class="d-flex flex-wrap justify-content-evenly m-3">
     <app-event
       *ngFor="let event of eventsList"
-      [event] = "event"
+      [currentUserEvent] = "event"
     ></app-event>
   </div>
 
