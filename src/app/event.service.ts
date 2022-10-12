@@ -61,20 +61,22 @@ export class EventService {
   cancelCreateEventClick(){
     this.$isCreatingEvent.next(!this.isCreatingEvent)
   }
+
   //create new event
   createEvent(newEvent: IEvents){
+    //if new event doesn't have a date alert & return
     if (newEvent.eventDate == null){
       alert('Must include a date')
       return;
     }
-
+    //assign event id to user's id, assign an unique event tag, transfer over event name & date
     const event: IEvents = {
       id: this.currentUserId,
       eventTag: uuid(),
       eventName: newEvent.eventName,
       eventDate: newEvent.eventDate,
     }
-
+    //add new event to database, broadcast/emit, and toggle off create
     this.httpService.createEvent(event).pipe().subscribe({
       next: (addedEvent) => {
         this.$event.next(addedEvent)
