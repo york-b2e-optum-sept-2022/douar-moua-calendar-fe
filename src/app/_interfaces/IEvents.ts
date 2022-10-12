@@ -2,7 +2,7 @@ import {IInvitations} from "./IInvitations";
 
 export interface IEvents{
   id: string,
-  eventTag: string
+  eventCreatorId: string
   eventName: string,
   eventDate: Date | null
   // inviteList: IInvitations[]
