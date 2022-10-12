@@ -52,6 +52,7 @@ export class EventService {
         alert('Unable to retrieve current user information. Please try again later.')
       }
     });
+
   }
 
   //toggle create
@@ -69,13 +70,15 @@ export class EventService {
       alert('Must include a date')
       return;
     }
-    //assign event id to user's id, assign an unique event tag, transfer over event name & date
+
+    //assign event a new id, eventCreatorId to user's id, transfer over event name & date
     const event: IEvents = {
       id: this.currentUserId,
       eventCreatorId: uuid(),
       eventName: newEvent.eventName,
       eventDate: newEvent.eventDate,
     }
+
     //add new event to database, broadcast/emit, and toggle off create
     this.httpService.createEvent(event).pipe().subscribe({
       next: (addedEvent) => {
