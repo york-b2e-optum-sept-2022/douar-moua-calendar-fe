@@ -11,7 +11,7 @@ export class CreateEventComponent {
 
   newEvent: IEvents = {
     id: '',
-    eventTag: '',
+    eventCreatorId: '',
     eventName: '',
     eventDate: null,
   }

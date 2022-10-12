@@ -22,6 +22,7 @@ export class EventService {
   currentUser!: IAccounts;
   $currentUser = new Subject<IAccounts>();
   currentUserId: string = '';
+  $currentUserEventList = new Subject<IEvents[]>();
 
   $event = new Subject<IEvents>();
 
@@ -52,6 +53,17 @@ export class EventService {
         alert('Unable to retrieve current user information. Please try again later.')
       }
     });
+
+    //get current user's events
+    this.httpService.getCurrentUserEventList(this.currentUserId).pipe(first()).subscribe({
+      next: (currentUserEventList) => {
+        this.$currentUserEventList.next(currentUserEventList)
+      },
+      error: err => {
+        console.error(err)
+        alert('Unable to retrieve your events. Please try again later.')
+      }
+    })
   }
 
   //toggle create
@@ -71,8 +83,8 @@ export class EventService {
     }
     //assign event id to user's id, assign an unique event tag, transfer over event name & date
     const event: IEvents = {
-      id: this.currentUserId,
-      eventTag: uuid(),
+      id: uuid(),
+      eventCreatorId: this.currentUserId,
       eventName: newEvent.eventName,
       eventDate: newEvent.eventDate,
     }
