@@ -92,8 +92,9 @@ export class EventService {
     })
   }
 
-  deleteEvent(){
-
+  deleteEvent(selectedEventId: string){
+    this.httpService.deleteEvent(selectedEventId)
+    console.log(selectedEventId)
   }
 
 }

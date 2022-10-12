@@ -41,8 +41,9 @@ export class HttpService {
       ) as Observable<IEvents>;
   }
 
-  deleteEvent(){
-    return this.httpClient.delete('http://localhost:3000/events?id=')
+  deleteEvent(selectedEventId: string){
+    console.log(selectedEventId)
+    return this.httpClient.delete('http://localhost:3000/events?id=' + selectedEventId)
   }
 
   // getCurrentUserEventList(currentUserId: string){
