@@ -1,5 +1,6 @@
 import {Component, Input,} from '@angular/core';
 import {IEvents} from "../_interfaces/IEvents";
+import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-event',
@@ -10,6 +11,6 @@ export class EventComponent {
 
   @Input() currentUserEvent!: IEvents;
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
 }
