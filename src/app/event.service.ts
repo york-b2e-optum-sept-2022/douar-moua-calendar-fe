@@ -73,8 +73,8 @@ export class EventService {
 
     //assign event a new id, eventCreatorId to user's id, transfer over event name & date
     const event: IEvents = {
-      id: this.currentUserId,
-      eventCreatorId: uuid(),
+      id: uuid(),
+      eventCreatorId: this.currentUserId,
       eventName: newEvent.eventName,
       eventDate: newEvent.eventDate,
     }

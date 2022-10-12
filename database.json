@@ -1,39 +1,17 @@
 {
   "accounts": [
     {
-      "id": "ab479ac2-672d-4c89-858e-1c262a0c70c2",
-      "username": "newusername",
-      "password": "newusername"
-    },
-    {
       "id": "b636802b-28e6-4729-846a-1981d4067821",
       "username": "douar",
       "password": "douar"
-    },
-    {
-      "id": "70323f9c-21f0-49fa-ad5e-b4156b267d83",
-      "username": "newusertest",
-      "password": "newusertest"
     }
   ],
   "events": [
     {
-      "id": "ab479ac2-672d-4c89-858e-1c262a0c70c2",
-      "eventID": "951bc664-ddd0-4d95-b049-78a7ac375399",
-      "eventName": "birthday",
-      "eventDate": "2022-10-11T00:00:00.000Z"
-    },
-    {
-      "id": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventTag": "631428fb-59b8-4701-80cd-7c73e6416b49",
+      "id": "fe1133b7-0e5a-4722-80ae-4011e66d500f",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar",
-      "eventDate": "2022-10-12"
-    },
-    {
-      "id": "7AuLyGE",
-      "eventTag": "3e932eb5-c7c4-4899-b288-e83fc7136c30",
-      "eventName": "testtoggleaftercreate",
-      "eventDate": "2022-10-12"
+      "eventDate": "2022-10-13"
     }
   ],
   "invitations": [
