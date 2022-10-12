@@ -11,6 +11,11 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getAccount(){
+    return this.httpClient.get('http://localhost:3000/accounts'
+    ) as Observable<IAccounts>
+  }
+
   foundAccount(loginInput: IAccounts){
     return this.httpClient.get('http://localhost:3000/accounts?username=' + loginInput.username
     ) as Observable<IAccounts[]>

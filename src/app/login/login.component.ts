@@ -19,7 +19,6 @@ export class LoginComponent {
 
   onLoginClick(){
     this.accountService.onLogin(this.loginAccount)
-    console.log(this.loginAccount)
   }
 
 }

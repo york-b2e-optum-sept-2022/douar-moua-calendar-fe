@@ -2,8 +2,8 @@ import {IInvitations} from "./IInvitations";
 
 export interface IEvents{
   id: string,
-  eventID: string
+  eventTag: string
   eventName: string,
-  eventDate: Date
+  eventDate: Date | null
   // inviteList: IInvitations[]
 }

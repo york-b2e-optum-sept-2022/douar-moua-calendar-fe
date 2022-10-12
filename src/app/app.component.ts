@@ -19,10 +19,12 @@ export class AppComponent implements OnDestroy {
 
   constructor(private accountService: AccountService, private eventService:EventService) {
 
+    //toggle login
     this.loginSub = this.accountService.$isLoggedIn.subscribe((isLogin: boolean) => {
       this.isLoggedIn = isLogin
     })
 
+    //toggle create event
     this.createEventSub = this.eventService.$isCreatingEvent.subscribe( (isCreatingEvent: boolean) => {
       this.isCreatingEvent = isCreatingEvent
     })

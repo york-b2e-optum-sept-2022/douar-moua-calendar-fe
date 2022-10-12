@@ -15,6 +15,7 @@ export class AccountService {
 
   $foundAccount = new Subject<IAccounts>();
   $account = new Subject<IAccounts>();
+  $currentUserName = new Subject<string>()
 
   accountList: IAccounts[] = [];
   $accountList = new Subject<IAccounts[]>();
@@ -66,6 +67,8 @@ export class AccountService {
         //if password is correct, login & pass found account info to
         this.$isLoggedIn.next(this.isLoggedIn)
         this.$foundAccount.next(foundAccount)
+        this.$currentUserName.next(foundAccount.username)
+        console.log('found account: ', foundAccount)
       },
       error: (err) => {
         console.error(err)
