@@ -1,12 +1,15 @@
 <div class="border shadow m-3">
+
   <div class="text-center">
     <h1 class="display-3 m-3">List of Events</h1>
     <button class="btn btn-success m-3" (click)="onCreateEventClick()">Create a New Event</button>
   </div>
+
   <div class="d-flex flex-wrap justify-content-evenly m-3">
     <app-event
       *ngFor="let event of eventsList"
       [event] = "event"
     ></app-event>
   </div>
+
 </div>

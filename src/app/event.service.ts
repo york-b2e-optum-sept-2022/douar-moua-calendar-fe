@@ -20,6 +20,7 @@ export class EventService {
   $eventList = new Subject<IEvents[]>();
 
   currentUser!: IAccounts;
+  $currentUser = new Subject<IAccounts>();
   currentUserId: string = '';
 
   $event = new Subject<IEvents>();
@@ -27,7 +28,7 @@ export class EventService {
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
     //get event list from httpService
-    this.httpService.getEventList().subscribe({
+    this.httpService.getEventList().pipe(first()).subscribe({
       next: eventsList => {
         this.eventList = eventsList
         this.$eventList.next(eventsList)
@@ -43,6 +44,8 @@ export class EventService {
       next: currentUser => {
         this.currentUser = currentUser
         this.currentUserId = currentUser.id
+        this.$currentUser.next(currentUser)
+        console.log(currentUser)
       },
       error: (err) => {
         console.error(err)
@@ -58,7 +61,7 @@ export class EventService {
   cancelCreateEventClick(){
     this.$isCreatingEvent.next(!this.isCreatingEvent)
   }
-
+  //create new event
   createEvent(newEvent: IEvents){
     if (newEvent.eventDate == null){
       alert('Must include a date')
@@ -67,7 +70,7 @@ export class EventService {
 
     const event: IEvents = {
       id: this.currentUserId,
-      eventID: uuid(),
+      eventTag: uuid(),
       eventName: newEvent.eventName,
       eventDate: newEvent.eventDate,
     }
@@ -75,6 +78,7 @@ export class EventService {
     this.httpService.createEvent(event).pipe().subscribe({
       next: (addedEvent) => {
         this.$event.next(addedEvent)
+        this.$isCreatingEvent.next(!this.isCreatingEvent)
       },
       error: (err) => {
         console.error(err)

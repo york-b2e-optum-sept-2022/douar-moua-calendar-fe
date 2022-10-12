@@ -11,9 +11,9 @@ export class CreateEventComponent {
 
   newEvent: IEvents = {
     id: '',
-    eventID: '',
+    eventTag: '',
     eventName: '',
-    eventDate: new Date(),
+    eventDate: null,
   }
 
   constructor(private eventService:EventService) { }
