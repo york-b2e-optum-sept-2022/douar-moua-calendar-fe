@@ -9,11 +9,6 @@
       "id": "b636802b-28e6-4729-846a-1981d4067821",
       "username": "douar",
       "password": "douar"
-    },
-    {
-      "id": "70323f9c-21f0-49fa-ad5e-b4156b267d83",
-      "username": "newusertest",
-      "password": "newusertest"
     }
   ],
   "events": [
@@ -30,9 +25,15 @@
       "eventDate": "2022-10-12"
     },
     {
-      "id": "7AuLyGE",
-      "eventTag": "3e932eb5-c7c4-4899-b288-e83fc7136c30",
-      "eventName": "testtoggleaftercreate",
+      "id": "d873a41c-09d3-4930-8325-3315310a3bbe",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar new event",
+      "eventDate": "2022-10-12"
+    },
+    {
+      "id": "ef9682d1-9329-417d-8b8f-397be8f53a26",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar event two",
       "eventDate": "2022-10-12"
     }
   ],
