@@ -1,8 +1,7 @@
-import {Component, Input, OnDestroy,} from '@angular/core';
+import {Component, OnDestroy,} from '@angular/core';
 import {IEvents} from "../_interfaces/IEvents";
 import {EventService} from "../event.service";
 import {Subscription} from "rxjs";
-import {IAccounts} from "../_interfaces/IAccounts";
 
 @Component({
   selector: 'app-event-list',
@@ -13,8 +12,6 @@ export class EventListComponent implements OnDestroy {
 
   eventsList: IEvents[] = []
   eventListSub: Subscription;
-
-  // currentUserEventList: IEvents[] = []
 
   constructor(private eventService: EventService) {
 
@@ -28,18 +25,6 @@ export class EventListComponent implements OnDestroy {
           alert('Unable to get list of events. Please try again later.')
       }
     });
-
-    //TODO figure out how to get current user event list & Unsubscribe
-    // this.eventService.$currentUserEventList.subscribe({
-    //   next: (currentUserEventList) => {
-    //     this.currentUserEventList = currentUserEventList
-    //     console.log(currentUserEventList)
-    //   },
-    //   error: (err) => {
-    //     console.error(err)
-    //     alert('Unable to retrieve your events. Please try again later')
-    //   }
-    // });
 
   }
 

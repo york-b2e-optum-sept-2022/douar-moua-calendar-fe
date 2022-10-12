@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {IAccounts} from "./_interfaces/IAccounts";
 import {Observable} from "rxjs";
 import {IEvents} from "./_interfaces/IEvents";
-import * as events from "events";
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +10,6 @@ import * as events from "events";
 export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
-
-  getAccount(){
-    return this.httpClient.get('http://localhost:3000/accounts'
-    ) as Observable<IAccounts>
-  }
 
   foundAccount(loginInput: IAccounts){
     return this.httpClient.get('http://localhost:3000/accounts?username=' + loginInput.username
@@ -46,10 +40,5 @@ export class HttpService {
     console.log(selectedEventId)
     return this.httpClient.delete('http://localhost:3000/events?id=' + selectedEventId)
   }
-
-  // getCurrentUserEventList(currentUserId: string){
-  //   return this.httpClient.get('http://localhost:3000/events?eventCreatorId=' + currentUserId,
-  //   ) as Observable<IEvents[]>
-  // }
 
 }
