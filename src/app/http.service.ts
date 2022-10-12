@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {IAccounts} from "./_interfaces/IAccounts";
 import {Observable} from "rxjs";
 import {IEvents} from "./_interfaces/IEvents";
+import * as events from "events";
 
 @Injectable({
   providedIn: 'root'

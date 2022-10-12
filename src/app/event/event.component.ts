@@ -16,6 +16,7 @@ export class EventComponent {
   onDeleteClick(){
     const selectedEvent = this.currentUserEvent.id
     console.log(selectedEvent)
+
     this.eventService.deleteEvent(selectedEvent)
     console.log('delete clicked')
   }
