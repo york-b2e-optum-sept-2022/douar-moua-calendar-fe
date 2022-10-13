@@ -25,6 +25,9 @@ export class EventService {
 
   $event = new Subject<IEvents>();
 
+  // eventDeleted!: IEvents;
+  // $eventDeleted = new Subject<IEvents>();
+
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
     //get current user data
@@ -82,6 +85,16 @@ export class EventService {
 
   deleteEvent(selectedEventId: string){
     this.httpService.deleteEvent(selectedEventId)
+    //   .pipe(first()).subscribe({
+    //   next: (eventDeleted) => {
+    //     this.eventDeleted = eventDeleted
+    //     this.$eventDeleted.next(this.eventDeleted)
+    //   },
+    //   error: (err) => {
+    //     console.error(err)
+    //     alert('Unable to delete your event. Please try again later.')
+    //   }
+    // })
     console.log(selectedEventId)
   }
 
