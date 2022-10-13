@@ -4,7 +4,6 @@ import {IAccounts} from "./_interfaces/IAccounts";
 import {first, Subject} from "rxjs";
 // @ts-ignore
 import {v4 as uuid} from 'uuid';
-import {EventService} from "./event.service";
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +41,7 @@ export class AccountService {
   }
 
   onLogin(loginInput: IAccounts){
+    console.log(loginInput)
     //if login username input is blank alert user
     if (loginInput.username == ''){
       alert('Username can not be blank')
@@ -57,7 +57,7 @@ export class AccountService {
     //password validation & login facilitation
     this.httpService.foundAccount(loginInput).pipe(first()).subscribe({
       next: (accountList) => {
-
+        console.log(accountList)
         //validate password
         const foundAccount = accountList.find(account => account.password === loginInput.password)
         //if password is incorrect alert invalid login

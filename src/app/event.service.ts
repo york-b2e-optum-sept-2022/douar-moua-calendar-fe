@@ -36,7 +36,6 @@ export class EventService {
         this.currentUser = currentUser
         this.currentUserId = currentUser.id
         this.$currentUser.next(currentUser)
-        console.log(currentUser)
       },
       error: (err) => {
         console.error(err)
