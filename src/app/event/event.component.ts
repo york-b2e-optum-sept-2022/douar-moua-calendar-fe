@@ -11,12 +11,12 @@ export class EventComponent {
 
   @Input() event!: IEvents;
 
-  updateEvent: IEvents = {
-    id: '',
-    eventCreatorId: '',
-    eventName: '',
-    eventDate: null
-  }
+  // updateEvent: IEvents = {
+  //   id: '',
+  //   eventCreatorId: '',
+  //   eventName: '',
+  //   eventDate: null
+  // }
   isUpdating: boolean = false
 
   constructor(private eventService: EventService) { }
@@ -35,15 +35,10 @@ export class EventComponent {
     this.isUpdating = false
   }
 
-  onSaveEditEventClick(){
-    const updateEvent: IEvents = {
-      id: this.updateEvent.id,
-      eventCreatorId: this.updateEvent.eventCreatorId,
-      eventName: this.updateEvent.eventName,
-      eventDate: this.updateEvent.eventDate
-    }
-    this.eventService.onUpdateEvent(updateEvent)
+  onSaveEditEventClick(updateEvent: IEvents){
+    this.eventService.onSaveUpdateEvent(updateEvent)
     this.isUpdating = false
+    this.eventService.getEventList()
     console.log(updateEvent)
   }
 

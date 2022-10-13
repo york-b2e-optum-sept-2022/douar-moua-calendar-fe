@@ -28,6 +28,9 @@ export class EventService {
   eventDeleted!: IEvents;
   $eventDeleted = new Subject<IEvents>();
 
+  eventUpdated!: IEvents;
+  $eventUpdated = new Subject<IEvents>();
+
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
     //get current user data
@@ -99,8 +102,7 @@ export class EventService {
   //delete an event
   onDeleteEvent(selectedEventId: string){
     console.log(selectedEventId)
-    this.httpService.deleteEvent(selectedEventId)
-      .pipe(first()).subscribe({
+    this.httpService.deleteEvent(selectedEventId).pipe(first()).subscribe({
       next: (eventDeleted) => {
         this.eventDeleted = eventDeleted
         this.$eventDeleted.next(this.eventDeleted)
@@ -113,8 +115,18 @@ export class EventService {
   }
 
   //update an event
-  onUpdateEvent(updateEvent: IEvents){
-    this.httpService.updateEvent(updateEvent)
+  onSaveUpdateEvent(updateEvent: IEvents){
+    const eventId: string = updateEvent.id
+    this.httpService.updateEvent(eventId, updateEvent).pipe(first()).subscribe({
+      next: (updatedEvent) => {
+        this.eventUpdated = updatedEvent
+        this.$eventDeleted.next(this.eventUpdated)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to make updates. Please try again later.')
+      }
+    })
     console.log(updateEvent)
   }
 

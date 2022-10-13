@@ -4,7 +4,7 @@
   </div>
   <div class="card-body">
     <label>Event Name: <span *ngIf="isUpdating == false">{{event.eventName}}</span></label>
-    <input *ngIf="isUpdating == true" placeholder="{{event.eventName}}" [(ngModel)]="updateEvent.eventName">
+    <input *ngIf="isUpdating == true" [(ngModel)]="event.eventName">
     <div>Invite List:
     </div>
   </div>
@@ -14,7 +14,7 @@
       <button class="btn btn-warning" (click)="onEditEventClick()">Edit Event</button>
     </div>
     <div *ngIf="isUpdating == true" class="container d-flex justify-content-evenly">
-      <button class="btn btn-warning" (click)="onSaveEditEventClick()">Save</button>
+      <button class="btn btn-warning" (click)="onSaveEditEventClick(event)">Save</button>
       <button class="btn btn-secondary" (click)="onCancelEditEventClick()">Cancel</button>
     </div>
   </div>
