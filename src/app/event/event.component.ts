@@ -30,4 +30,8 @@ export class EventComponent {
     this.isUpdating = true
   }
 
+  onCancelEditEventClick(){
+    this.isUpdating = false
+  }
+
 }

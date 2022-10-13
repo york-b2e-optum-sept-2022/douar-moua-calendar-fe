@@ -15,7 +15,7 @@
     </div>
     <div *ngIf="isUpdating == true" class="container d-flex justify-content-evenly">
       <button class="btn btn-warning">Save</button>
-      <button class="btn btn-secondary">Cancel</button>
+      <button class="btn btn-secondary" (click)="onCancelEditEventClick()">Cancel</button>
     </div>
   </div>
 </div>
