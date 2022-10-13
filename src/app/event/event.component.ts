@@ -9,12 +9,12 @@ import {EventService} from "../event.service";
 })
 export class EventComponent {
 
-  @Input() currentUserEvent!: IEvents;
+  @Input() event!: IEvents;
 
   constructor(private eventService: EventService) { }
 
   onDeleteClick(){
-    const selectedEvent = this.currentUserEvent.id
+    const selectedEvent = this.event.id
     console.log(selectedEvent)
 
     this.eventService.deleteEvent(selectedEvent)

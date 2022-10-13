@@ -27,18 +27,6 @@ export class EventService {
 
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
-    //get event list from httpService
-    this.httpService.getEventList().pipe(first()).subscribe({
-      next: eventsList => {
-        this.eventList = eventsList
-        this.$eventList.next(eventsList)
-      },
-      error: (err) => {
-        console.error(err)
-        alert('Unable to get list of events. Please try again later.')
-      }
-    });
-
     //get current user data
     this.accountService.$foundAccount.pipe(first()).subscribe({
       next: currentUser => {
@@ -95,6 +83,21 @@ export class EventService {
   deleteEvent(selectedEventId: string){
     this.httpService.deleteEvent(selectedEventId)
     console.log(selectedEventId)
+  }
+
+  //get event list
+  getEventList(){
+    this.httpService.getEventList().pipe(first()).subscribe({
+      next: eventsList => {
+        this.eventList = eventsList
+        this.$eventList.next(this.eventList)
+        console.log(this.eventList)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to get list of events. Please try again later.')
+      }
+    });
   }
 
 }

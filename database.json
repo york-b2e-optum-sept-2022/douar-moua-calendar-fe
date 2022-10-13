@@ -4,6 +4,11 @@
       "id": "b636802b-28e6-4729-846a-1981d4067821",
       "username": "douar",
       "password": "douar"
+    },
+    {
+      "id": "c6bcab2b-2636-4efb-b0b0-2fcd14da5884",
+      "username": "newuser",
+      "password": "newuser"
     }
   ],
   "events": [
@@ -11,6 +16,24 @@
       "id": "fe1133b7-0e5a-4722-80ae-4011e66d500f",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "02017a3f-12a7-4dad-a3c5-94cc27b5a72f",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 2",
+      "eventDate": "2022-10-12"
+    },
+    {
+      "id": "05cd2222-7009-40a8-8769-8aa82fef1078",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "test douar",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "7803eb46-aa91-4ab8-b3b2-4ac5491591cf",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 3",
       "eventDate": "2022-10-13"
     }
   ],

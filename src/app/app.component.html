@@ -6,9 +6,10 @@
   <app-create-account></app-create-account>
 </div>
 
-<div *ngIf="isLoggedIn == true">
-  <app-nav-bar></app-nav-bar>
-  <app-event-list *ngIf="isCreatingEvent == false"></app-event-list>
-  <app-create-event *ngIf="isCreatingEvent == true"></app-create-event>
+<div>
+  <app-nav-bar *ngIf="isLoggedIn == true"></app-nav-bar>
+  <app-create-event *ngIf="isLoggedIn == true && isCreatingEvent == true"></app-create-event>
+  <app-event-list *ngIf="isLoggedIn == true && isCreatingEvent == false"></app-event-list>
 </div>
+
 

@@ -24,6 +24,7 @@ export class CreateEventComponent {
 
   onCancelCreateEventClick(){
     this.eventService.cancelCreateEventClick()
+    this.eventService.getEventList()
   }
 
 }
