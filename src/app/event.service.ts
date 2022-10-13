@@ -120,7 +120,7 @@ export class EventService {
     this.httpService.updateEvent(eventId, updateEvent).pipe(first()).subscribe({
       next: (updatedEvent) => {
         this.eventUpdated = updatedEvent
-        this.$eventDeleted.next(this.eventUpdated)
+        this.$eventUpdated.next(this.eventUpdated)
       },
       error: (err) => {
         console.error(err)
