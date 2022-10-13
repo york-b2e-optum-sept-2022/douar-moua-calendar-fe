@@ -91,7 +91,6 @@ export class EventService {
       next: eventsList => {
         this.eventList = eventsList
         this.$eventList.next(this.eventList)
-        console.log(this.eventList)
       },
       error: (err) => {
         console.error(err)
