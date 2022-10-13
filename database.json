@@ -23,6 +23,18 @@
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
       "eventDate": "2022-10-13"
+    },
+    {
+      "id": "f4e60086-56e1-44b1-be15-f9613af5708e",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 3",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "96b37ab6-130e-47b6-97f5-57f1b2fa5e72",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "DELETE THIS ONE",
+      "eventDate": "2022-10-13"
     }
   ],
   "invitations": [
