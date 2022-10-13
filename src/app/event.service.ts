@@ -46,6 +46,20 @@ export class EventService {
 
   }
 
+  //get event list
+  getEventList(){
+    this.httpService.getEventList().pipe(first()).subscribe({
+      next: eventsList => {
+        this.eventList = eventsList
+        this.$eventList.next(this.eventList)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to get list of events. Please try again later.')
+      }
+    });
+  }
+
   //toggle create
   createEventClick(){
     this.$isCreatingEvent.next(this.isCreatingEvent)
@@ -54,8 +68,8 @@ export class EventService {
     this.$isCreatingEvent.next(!this.isCreatingEvent)
   }
 
-  //create new event
-  createEvent(newEvent: IEvents){
+  //create a new event
+  onCreateEvent(newEvent: IEvents){
     //if new event doesn't have a date alert & return
     if (newEvent.eventDate == null){
       alert('Must include a date')
@@ -83,7 +97,8 @@ export class EventService {
     })
   }
 
-  deleteEvent(selectedEventId: string){
+  //delete an event
+  onDeleteEvent(selectedEventId: string){
     this.httpService.deleteEvent(selectedEventId)
     //   .pipe(first()).subscribe({
     //   next: (eventDeleted) => {
@@ -98,18 +113,10 @@ export class EventService {
     console.log(selectedEventId)
   }
 
-  //get event list
-  getEventList(){
-    this.httpService.getEventList().pipe(first()).subscribe({
-      next: eventsList => {
-        this.eventList = eventsList
-        this.$eventList.next(this.eventList)
-      },
-      error: (err) => {
-        console.error(err)
-        alert('Unable to get list of events. Please try again later.')
-      }
-    });
+  //update an event
+  onUpdateEvent(updateEvent: IEvents){
+
   }
+
 
 }
