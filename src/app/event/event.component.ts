@@ -23,6 +23,7 @@ export class EventComponent {
 
   onDeleteClick(eventId: string){
     this.eventService.onDeleteEvent(eventId)
+    this.eventService.getEventList()
     console.log('delete clicked ', eventId)
   }
 
