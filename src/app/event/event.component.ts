@@ -13,12 +13,9 @@ export class EventComponent {
 
   constructor(private eventService: EventService) { }
 
-  onDeleteClick(){
-    const selectedEvent = this.event.id
-    console.log(selectedEvent)
-
-    this.eventService.deleteEvent(selectedEvent)
-    console.log('delete clicked')
+  onDeleteClick(eventId: string){
+    this.eventService.deleteEvent(eventId)
+    console.log('delete clicked ', eventId)
   }
 
 }

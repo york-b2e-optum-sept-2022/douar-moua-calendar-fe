@@ -37,7 +37,7 @@ export class HttpService {
   }
 
   deleteEvent(selectedEventId: string){
-    console.log(selectedEventId)
+    console.log('http://localhost:3000/events?id=',selectedEventId)
     return this.httpClient.delete('http://localhost:3000/events?id=' + selectedEventId)
   }
 
