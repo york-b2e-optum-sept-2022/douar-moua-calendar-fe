@@ -25,8 +25,8 @@ export class EventService {
 
   $event = new Subject<IEvents>();
 
-  // eventDeleted!: IEvents;
-  // $eventDeleted = new Subject<IEvents>();
+  eventDeleted!: IEvents;
+  $eventDeleted = new Subject<IEvents>();
 
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
@@ -99,23 +99,24 @@ export class EventService {
 
   //delete an event
   onDeleteEvent(selectedEventId: string){
-    this.httpService.deleteEvent(selectedEventId)
-    //   .pipe(first()).subscribe({
-    //   next: (eventDeleted) => {
-    //     this.eventDeleted = eventDeleted
-    //     this.$eventDeleted.next(this.eventDeleted)
-    //   },
-    //   error: (err) => {
-    //     console.error(err)
-    //     alert('Unable to delete your event. Please try again later.')
-    //   }
-    // })
     console.log(selectedEventId)
+    this.httpService.deleteEvent(selectedEventId)
+      .pipe(first()).subscribe({
+      next: (eventDeleted) => {
+        this.eventDeleted = eventDeleted
+        this.$eventDeleted.next(this.eventDeleted)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to delete your event. Please try again later.')
+      }
+    })
   }
 
   //update an event
   onUpdateEvent(updateEvent: IEvents){
-
+    this.httpService.updateEvent(updateEvent)
+    console.log(updateEvent)
   }
 
 

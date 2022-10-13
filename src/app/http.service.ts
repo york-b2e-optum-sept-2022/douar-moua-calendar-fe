@@ -37,8 +37,15 @@ export class HttpService {
   }
 
   deleteEvent(selectedEventId: string){
-    console.log('http://localhost:3000/events?id=',selectedEventId)
-    return this.httpClient.delete('http://localhost:3000/events?id=' + selectedEventId)
+    console.log('http://localhost:3000/events',selectedEventId)
+    return this.httpClient.delete('http://localhost:3000/events' + `/${selectedEventId}`
+    ) as Observable<IEvents>
+  }
+
+  updateEvent(updateEvent: IEvents){
+    console.log(updateEvent)
+    return this.httpClient.put('http://localhost:3000/events?id=' + updateEvent.id, updateEvent
+    ) as Observable<IEvents>
   }
 
 }

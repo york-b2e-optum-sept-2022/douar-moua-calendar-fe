@@ -1,6 +1,6 @@
 <div class="card m-3 shadow" style="width: 20rem">
   <div class="card-header bg-success bg-opacity-50">
-    <h3>Event Date: {{event.eventDate | date: 'shortDate'}} </h3>
+    <h3>Event Date: <span *ngIf="isUpdating == false">{{event.eventDate | date: 'shortDate'}}</span> </h3>
   </div>
   <div class="card-body">
     <label>Event Name: <span *ngIf="isUpdating == false">{{event.eventName}}</span></label>
@@ -14,7 +14,7 @@
       <button class="btn btn-warning" (click)="onEditEventClick()">Edit Event</button>
     </div>
     <div *ngIf="isUpdating == true" class="container d-flex justify-content-evenly">
-      <button class="btn btn-warning">Save</button>
+      <button class="btn btn-warning" (click)="onSaveEditEventClick()">Save</button>
       <button class="btn btn-secondary" (click)="onCancelEditEventClick()">Cancel</button>
     </div>
   </div>

@@ -20,7 +20,7 @@ export class CreateEventComponent {
 
   //tell event service to add new event with given new event input
   onCreateEventClick(){
-    this.eventService.createEvent(this.newEvent)
+    this.eventService.onCreateEvent(this.newEvent)
     this.eventService.getEventList()
   }
 

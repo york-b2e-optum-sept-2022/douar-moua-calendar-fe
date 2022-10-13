@@ -22,7 +22,7 @@ export class EventComponent {
   constructor(private eventService: EventService) { }
 
   onDeleteClick(eventId: string){
-    this.eventService.deleteEvent(eventId)
+    this.eventService.onDeleteEvent(eventId)
     console.log('delete clicked ', eventId)
   }
 
@@ -32,6 +32,18 @@ export class EventComponent {
 
   onCancelEditEventClick(){
     this.isUpdating = false
+  }
+
+  onSaveEditEventClick(){
+    const updateEvent: IEvents = {
+      id: this.updateEvent.id,
+      eventCreatorId: this.updateEvent.eventCreatorId,
+      eventName: this.updateEvent.eventName,
+      eventDate: this.updateEvent.eventDate
+    }
+    this.eventService.onUpdateEvent(updateEvent)
+    this.isUpdating = false
+    console.log(updateEvent)
   }
 
 }
