@@ -18,8 +18,10 @@ export class CreateEventComponent {
 
   constructor(private eventService:EventService) { }
 
+  //tell event service to add new event with given new event input
   onCreateEventClick(){
     this.eventService.createEvent(this.newEvent)
+    this.eventService.getEventList()
   }
 
   onCancelCreateEventClick(){
