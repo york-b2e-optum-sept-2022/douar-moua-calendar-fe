@@ -8,8 +8,14 @@
     <div>Invite List:
     </div>
   </div>
-  <div class="card-footer d-flex justify-content-evenly">
-    <button class="btn btn-danger" (click)="onDeleteClick(event.id)">Delete Event</button>
-    <button class="btn btn-warning" (click)="onEditEventClick()">Edit Event</button>
+  <div class="card-footer">
+    <div *ngIf="isUpdating == false" class="container d-flex justify-content-evenly">
+      <button class="btn btn-danger" (click)="onDeleteClick(event.id)">Delete Event</button>
+      <button class="btn btn-warning" (click)="onEditEventClick()">Edit Event</button>
+    </div>
+    <div *ngIf="isUpdating == true" class="container d-flex justify-content-evenly">
+      <button class="btn btn-warning">Save</button>
+      <button class="btn btn-secondary">Cancel</button>
+    </div>
   </div>
 </div>
