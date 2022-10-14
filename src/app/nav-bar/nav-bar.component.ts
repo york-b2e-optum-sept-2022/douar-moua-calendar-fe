@@ -1,8 +1,7 @@
 import {Component,} from '@angular/core';
 import {AccountService} from "../account.service";
+import {Subscription} from "rxjs";
 import {IAccounts} from "../_interfaces/IAccounts";
-import {first, Subscription} from "rxjs";
-import {EventService} from "../event.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,15 +10,20 @@ import {EventService} from "../event.service";
 })
 export class NavBarComponent {
 
-  currentUserName: string = ''
+  currentUser: IAccounts = {
+    id: '',
+    username: '',
+    password: ''
+  }
 
   userAccountSub: Subscription;
 
   constructor(private accountService: AccountService) {
-    this.userAccountSub = this.accountService.$currentUserName.subscribe({
-      next: (currentUserName) => {
-        this.currentUserName = currentUserName
-        console.log(currentUserName)
+    console.log(this.currentUser)
+    this.userAccountSub = this.accountService.$foundAccount.subscribe({
+      next: (foundAccount) => {
+        this.currentUser = foundAccount
+        console.log(foundAccount)
       },
       error: err => {
         console.error(err)
