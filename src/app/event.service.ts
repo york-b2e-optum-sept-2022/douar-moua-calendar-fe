@@ -13,9 +13,6 @@ import {v4 as uuid} from 'uuid';
 })
 export class EventService implements OnDestroy {
 
-  isCreatingEvent: boolean = true;
-  $isCreatingEvent = new Subject<boolean>()
-
   $newEvent = new Subject<IEvents>();
 
   eventList: IEvents[] = []
@@ -65,14 +62,6 @@ export class EventService implements OnDestroy {
     });
   }
 
-  //toggle create
-  createEventClick(){
-    this.$isCreatingEvent.next(this.isCreatingEvent)
-  }
-  cancelCreateEventClick(){
-    this.$isCreatingEvent.next(!this.isCreatingEvent)
-  }
-
   //create a new event
   onCreateEvent(newEvent: IEvents){
     //if new event doesn't have a date alert & return
@@ -93,8 +82,9 @@ export class EventService implements OnDestroy {
     this.httpService.createEvent(event).pipe().subscribe({
       next: (addedEvent) => {
         this.$newEvent.next(addedEvent)
-        this.$isCreatingEvent.next(!this.isCreatingEvent)
+        // this.$isCreatingEvent.next(!this.isCreatingEvent)
         this.getEventList()
+        this.accountService.getAccountList()
       },
       error: (err) => {
         console.error(err)
@@ -109,7 +99,8 @@ export class EventService implements OnDestroy {
       next: (eventDeleted) => {
         this.eventDeleted = eventDeleted
         this.$eventDeleted.next(this.eventDeleted)
-        this.getEventList()
+        this.getEventList();
+        this.accountService.getAccountList()
       },
       error: (err) => {
         console.error(err)
