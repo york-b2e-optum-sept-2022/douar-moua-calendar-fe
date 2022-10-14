@@ -94,6 +94,7 @@ export class EventService implements OnDestroy {
       next: (addedEvent) => {
         this.$newEvent.next(addedEvent)
         this.$isCreatingEvent.next(!this.isCreatingEvent)
+        this.getEventList()
       },
       error: (err) => {
         console.error(err)
@@ -108,6 +109,7 @@ export class EventService implements OnDestroy {
       next: (eventDeleted) => {
         this.eventDeleted = eventDeleted
         this.$eventDeleted.next(this.eventDeleted)
+        this.getEventList()
       },
       error: (err) => {
         console.error(err)
