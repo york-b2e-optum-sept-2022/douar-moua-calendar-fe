@@ -18,57 +18,9 @@
   ],
   "events": [
     {
-      "id": "2e8a7274-ca81-4c03-ad00-bbe068257518",
-      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
-      "eventName": "mouas 1",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "2319f9c5-04f5-4a81-84f5-651d2c41c00e",
-      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
-      "eventName": "mouas 2",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "52dd0e05-dbf5-4f13-a98e-cd2821460423",
-      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
-      "eventName": "mouas 3",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "d147cbcb-ac17-4ee3-ac2b-780ee7457243",
-      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
-      "eventName": "new user 1",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "edd34770-92ca-4a32-92ce-ad33909dcd08",
-      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
-      "eventName": "new user 2",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "6f4adb9d-d164-4b4e-8742-038a3369a410",
-      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
-      "eventName": "new user 3",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "239b0cf7-7206-437d-ba5b-72fcd00b3fa3",
+      "id": "80788480-19e7-4acf-91bc-a8fedd1faba0",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 1",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "4fadae7e-e5a6-478a-9444-79bc230e1038",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 2",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "b76296e2-7052-43c3-9384-81af1b5c29b2",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 3",
       "eventDate": "2022-10-14"
     }
   ],

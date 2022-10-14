@@ -54,6 +54,9 @@ export class EventService implements OnDestroy {
     this.httpService.getEventList().pipe(first()).subscribe({
       next: eventsList => {
         this.eventList = eventsList.filter((event) => {
+          console.log('currentUserId ', this.currentUserId)
+          console.log('eventCreatorId ', event.eventCreatorId)
+          console.log('eventList ', eventsList)
           return this.currentUserId == event.eventCreatorId
         })
         this.$eventList.next(this.eventList)
