@@ -16,14 +16,10 @@ export class EventService implements OnDestroy {
   isCreatingEvent: boolean = true;
   $isCreatingEvent = new Subject<boolean>()
 
+  $newEvent = new Subject<IEvents>();
+
   eventList: IEvents[] = []
   $eventList = new Subject<IEvents[]>();
-
-  currentUser!: IAccounts;
-  $currentUser = new Subject<IAccounts>();
-  currentUserId: string = '';
-
-  $event = new Subject<IEvents>();
 
   eventDeleted!: IEvents;
   $eventDeleted = new Subject<IEvents>();
@@ -31,6 +27,9 @@ export class EventService implements OnDestroy {
   eventUpdated!: IEvents;
   $eventUpdated = new Subject<IEvents>();
 
+  currentUser!: IAccounts;
+  $currentUser = new Subject<IAccounts>();
+  currentUserId: string = '';
   foundAccountSub: Subscription;
 
   constructor(private httpService:HttpService, private accountService:AccountService) {
@@ -98,7 +97,7 @@ export class EventService implements OnDestroy {
     //add new event to database, broadcast/emit, and toggle off create
     this.httpService.createEvent(event).pipe().subscribe({
       next: (addedEvent) => {
-        this.$event.next(addedEvent)
+        this.$newEvent.next(addedEvent)
         this.$isCreatingEvent.next(!this.isCreatingEvent)
       },
       error: (err) => {

@@ -9,6 +9,11 @@
       "id": "0438e790-8830-484e-8309-1d1388c39324",
       "username": "mouas",
       "password": "mouas"
+    },
+    {
+      "id": "ac560592-066b-4ccb-aeb2-b237f5064613",
+      "username": "new user",
+      "password": "new user"
     }
   ],
   "events": [
@@ -22,12 +27,6 @@
       "id": "3596a78c-2859-4a97-ae04-000b807b4af5",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "3bf2093b-8388-45d0-99c4-a07fadb402dc",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 3",
       "eventDate": "2022-10-13"
     },
     {
@@ -49,21 +48,27 @@
       "eventDate": "2022-10-13"
     },
     {
-      "id": "b3b793c0-09e7-4a08-87df-040d92d5b831",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "newuser 1",
+      "id": "d147cbcb-ac17-4ee3-ac2b-780ee7457243",
+      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
+      "eventName": "new user 1",
       "eventDate": "2022-10-13"
     },
     {
-      "id": "b2c79ff9-fc37-4845-8a0e-449b3e41c3c0",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "newuser 2",
+      "id": "edd34770-92ca-4a32-92ce-ad33909dcd08",
+      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
+      "eventName": "new user 2",
       "eventDate": "2022-10-13"
     },
     {
-      "id": "a05d087a-1990-47b4-9776-fdf7e02c3ff7",
+      "id": "6f4adb9d-d164-4b4e-8742-038a3369a410",
+      "eventCreatorId": "ac560592-066b-4ccb-aeb2-b237f5064613",
+      "eventName": "new user 3",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "239b0cf7-7206-437d-ba5b-72fcd00b3fa3",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "newuser 3",
+      "eventName": "douar 3",
       "eventDate": "2022-10-13"
     }
   ],

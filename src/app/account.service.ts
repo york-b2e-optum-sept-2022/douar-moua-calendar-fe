@@ -13,9 +13,9 @@ export class AccountService {
   isLoggedIn: boolean = true;
   $isLoggedIn = new Subject<boolean>();
 
+  foundAccount!: IAccounts;
   $foundAccount = new Subject<IAccounts>();
-  $account = new Subject<IAccounts>();
-  $currentUserName = new Subject<string>()
+  $newAccount = new Subject<IAccounts>();
 
   accountList: IAccounts[] = [];
   $accountList = new Subject<IAccounts[]>();
@@ -67,8 +67,10 @@ export class AccountService {
         }
         //if password is correct, toggle log in, broadcast/emit current user info
         this.$isLoggedIn.next(this.isLoggedIn)
-        this.$foundAccount.next(foundAccount)
-        this.$currentUserName.next(foundAccount.username)
+        this.foundAccount = foundAccount
+        this.$foundAccount.next(this.foundAccount)
+        console.log(foundAccount)
+        console.log(foundAccount.username)
       },
       error: (err) => {
         console.error(err)
@@ -107,7 +109,7 @@ export class AccountService {
         //add new account to database & create observable for subscription purposes
         this.httpService.registerAccount(account).pipe(first()).subscribe({
           next: (account) => {
-            this.$account.next(account)
+            this.$newAccount.next(account)
             alert("You've successfully created an account! Login to begin!")
           },
           error: (err) => {
