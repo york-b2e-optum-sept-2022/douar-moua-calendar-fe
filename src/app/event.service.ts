@@ -115,7 +115,6 @@ export class EventService implements OnDestroy {
       next: (updatedEvent) => {
         this.eventUpdated = updatedEvent
         this.$eventUpdated.next(this.eventUpdated)
-        this.accountService.getAccountList()
       },
       error: (err) => {
         console.error(err)

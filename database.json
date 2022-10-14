@@ -24,39 +24,15 @@
       "eventDate": "2022-10-14"
     },
     {
-      "id": "6e2898d4-6098-4f23-b96f-0bddda8200a1",
+      "id": "74cc2b94-b1fc-48c5-a47f-9c1d660d97d5",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
-      "eventDate": "2022-10-14"
+      "eventDate": "2022-10-19"
     },
     {
-      "id": "a9bee197-0d71-4b7c-9767-16ecb982b381",
+      "id": "18f8ffa0-2abf-46f4-81a3-fc4fc2f5a7dd",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 3",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "cae6fab1-dce8-47b8-9afd-b78df211ad95",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 4",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "d349ab23-b9de-4014-ba47-f9f9eb09aa7f",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 5",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "38d8740c-fb3d-48c3-9705-5de64eb874a7",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 6",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "ff9990a9-9e78-4015-babb-2f3c1e805788",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 7",
+      "eventName": "5",
       "eventDate": "2022-10-19"
     }
   ],
