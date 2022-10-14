@@ -37,13 +37,11 @@ export class HttpService {
   }
 
   deleteEvent(selectedEventId: string){
-    console.log('http://localhost:3000/events',selectedEventId)
     return this.httpClient.delete('http://localhost:3000/events' + `/${selectedEventId}`
     ) as Observable<IEvents>
   }
 
   updateEvent(id: string, updateEvent: IEvents): Observable<IEvents>{
-    console.log(updateEvent)
     return this.httpClient.put<IEvents>('http://localhost:3000/events' + `/${id}`, updateEvent
     )
   }

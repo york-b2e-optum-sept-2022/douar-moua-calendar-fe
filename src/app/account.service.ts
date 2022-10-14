@@ -21,25 +21,29 @@ export class AccountService {
   $accountList = new Subject<IAccounts[]>();
 
   constructor(private httpService: HttpService) {
+  }
 
-    //get account list from http service
+  //get account list from http service
+  getAccountList(){
     this.httpService.getAccountList().pipe(first()).subscribe({
       next: (accountList) => {
         this.accountList = accountList
         this.$accountList.next(accountList)
+        console.log(this.accountList)
       },
       error: (err) => {
         console.error(err)
         alert('Unable to get list of users. Please try again later.')
       }
     })
-
   }
 
+  //log out
   onLogOut(){
     this.$isLoggedIn.next(!this.isLoggedIn)
   }
 
+  //facilitate login validation, login, and emit login user data
   onLogin(loginInput: IAccounts){
     console.log(loginInput)
     //if login username input is blank alert user
@@ -70,7 +74,6 @@ export class AccountService {
         this.foundAccount = foundAccount
         this.$foundAccount.next(this.foundAccount)
         console.log(foundAccount)
-        console.log(foundAccount.username)
       },
       error: (err) => {
         console.error(err)
@@ -79,6 +82,7 @@ export class AccountService {
     })
   }
 
+  //facilitate new event validation, create new event, send new event to http service, and emit new event data
   onCreateAccount(newAccount: IAccounts){
     //validate new username requirements
     if (newAccount.username === '' || newAccount.username.length < 5){

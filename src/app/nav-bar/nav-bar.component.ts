@@ -19,11 +19,9 @@ export class NavBarComponent {
   userAccountSub: Subscription;
 
   constructor(private accountService: AccountService) {
-    console.log(this.currentUser)
     this.userAccountSub = this.accountService.$foundAccount.subscribe({
       next: (foundAccount) => {
         this.currentUser = foundAccount
-        console.log(foundAccount)
       },
       error: err => {
         console.error(err)

@@ -37,7 +37,6 @@ export class EventService implements OnDestroy {
     //get current user data
     this.foundAccountSub = this.accountService.$foundAccount.subscribe({
       next: currentUser => {
-        console.log(currentUser)
         this.currentUser = currentUser
         this.currentUserId = currentUser.id
         this.$currentUser.next(currentUser)
@@ -57,11 +56,7 @@ export class EventService implements OnDestroy {
         this.eventList = eventsList.filter((event) => {
           return this.currentUserId == event.eventCreatorId
         })
-
         this.$eventList.next(this.eventList)
-        console.log(eventsList)
-        console.log(this.currentUserId)
-        console.log(this.eventList)
       },
       error: (err) => {
         console.error(err)
@@ -109,7 +104,6 @@ export class EventService implements OnDestroy {
 
   //delete an event
   onDeleteEvent(selectedEventId: string){
-    console.log(selectedEventId)
     this.httpService.deleteEvent(selectedEventId).pipe(first()).subscribe({
       next: (eventDeleted) => {
         this.eventDeleted = eventDeleted
@@ -135,7 +129,6 @@ export class EventService implements OnDestroy {
         alert('Unable to make updates. Please try again later.')
       }
     })
-    console.log(updateEvent)
   }
 
   ngOnDestroy() {
