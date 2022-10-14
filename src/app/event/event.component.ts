@@ -48,9 +48,8 @@ export class EventComponent {
   }
 
   onSaveEditEventClick(updateEvent: IEvents){
-    this.eventService.onSaveUpdateEvent(updateEvent)
+    this.eventService.onSaveUpdateEvent(updateEvent);
     this.isUpdating = false
-    this.eventService.getEventList()
   }
 
 }
