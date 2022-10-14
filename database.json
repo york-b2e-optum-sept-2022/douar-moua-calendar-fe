@@ -16,7 +16,50 @@
       "password": "new user"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "351e1cfb-3677-454e-a426-7b1cab00f293",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 1",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "6e2898d4-6098-4f23-b96f-0bddda8200a1",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 2",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "a9bee197-0d71-4b7c-9767-16ecb982b381",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 3",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "cae6fab1-dce8-47b8-9afd-b78df211ad95",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 4",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "d349ab23-b9de-4014-ba47-f9f9eb09aa7f",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 5",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "38d8740c-fb3d-48c3-9705-5de64eb874a7",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 6",
+      "eventDate": "2022-10-14"
+    },
+    {
+      "id": "ff9990a9-9e78-4015-babb-2f3c1e805788",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 7",
+      "eventDate": "2022-10-19"
+    }
+  ],
   "invitations": [
     {
       "id": "1",
