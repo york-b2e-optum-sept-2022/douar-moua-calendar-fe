@@ -6,33 +6,46 @@
       "password": "douar"
     },
     {
-      "id": "c6bcab2b-2636-4efb-b0b0-2fcd14da5884",
-      "username": "newuser",
-      "password": "newuser"
-    },
-    {
-      "id": "a5310a3f-b33e-4cf1-a735-b8617dd192e7",
-      "username": "testuser",
-      "password": "testuser"
+      "id": "0438e790-8830-484e-8309-1d1388c39324",
+      "username": "mouas",
+      "password": "mouas"
     }
   ],
   "events": [
     {
       "id": "ba167be4-14b0-45bf-98f2-8e99b9b42610",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 2",
-      "eventDate": "2022-10-13"
-    },
-    {
-      "id": "f4e60086-56e1-44b1-be15-f9613af5708e",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 3",
+      "eventName": "douar 1",
       "eventDate": "2022-10-13"
     },
     {
       "id": "3596a78c-2859-4a97-ae04-000b807b4af5",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar updated",
+      "eventName": "douar 2",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "3bf2093b-8388-45d0-99c4-a07fadb402dc",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "douar 3",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "2e8a7274-ca81-4c03-ad00-bbe068257518",
+      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
+      "eventName": "mouas 1",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "2319f9c5-04f5-4a81-84f5-651d2c41c00e",
+      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
+      "eventName": "mouas 2",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "52dd0e05-dbf5-4f13-a98e-cd2821460423",
+      "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
+      "eventName": "mouas 3",
       "eventDate": "2022-10-13"
     }
   ],

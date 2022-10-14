@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {HttpService} from "./http.service";
 import {IEvents} from "./_interfaces/IEvents";
-import {first, Subject} from "rxjs";
+import {first, Subject, Subscription} from "rxjs";
 import {AccountService} from "./account.service";
 import {IAccounts} from "./_interfaces/IAccounts";
 // @ts-ignore
@@ -11,7 +11,7 @@ import {v4 as uuid} from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class EventService implements OnDestroy {
 
   isCreatingEvent: boolean = true;
   $isCreatingEvent = new Subject<boolean>()
@@ -31,11 +31,14 @@ export class EventService {
   eventUpdated!: IEvents;
   $eventUpdated = new Subject<IEvents>();
 
+  foundAccountSub: Subscription;
+
   constructor(private httpService:HttpService, private accountService:AccountService) {
 
     //get current user data
-    this.accountService.$foundAccount.pipe(first()).subscribe({
+    this.foundAccountSub = this.accountService.$foundAccount.subscribe({
       next: currentUser => {
+        console.log(currentUser)
         this.currentUser = currentUser
         this.currentUserId = currentUser.id
         this.$currentUser.next(currentUser)
@@ -52,8 +55,14 @@ export class EventService {
   getEventList(){
     this.httpService.getEventList().pipe(first()).subscribe({
       next: eventsList => {
-        this.eventList = eventsList
+        this.eventList = eventsList.filter((event) => {
+          return this.currentUserId == event.eventCreatorId
+        })
+
         this.$eventList.next(this.eventList)
+        console.log(eventsList)
+        console.log(this.currentUserId)
+        console.log(this.eventList)
       },
       error: (err) => {
         console.error(err)
@@ -128,6 +137,10 @@ export class EventService {
       }
     })
     console.log(updateEvent)
+  }
+
+  ngOnDestroy() {
+    this.foundAccountSub.unsubscribe()
   }
 
 
