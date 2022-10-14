@@ -20,10 +20,6 @@ export class AppComponent implements OnDestroy {
       this.isLoggedIn = isLogin
     })
 
-    //toggle create event
-    // this.createEventSub = this.eventService.$isCreatingEvent.subscribe( (isCreatingEvent: boolean) => {
-    //   this.isCreatingEvent = isCreatingEvent
-    // })
   }
 
   ngOnDestroy(){
