@@ -28,12 +28,6 @@ export class EventListComponent implements OnDestroy {
 
   }
 
-  //beginning of toggle on create event
-  onCreateEventClick(){
-    this.eventService.createEventClick()
-  }
-
-
   ngOnDestroy() {
     this.eventListSub.unsubscribe()
   }

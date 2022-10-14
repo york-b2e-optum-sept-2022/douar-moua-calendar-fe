@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import {AccountService} from "./account.service";
 import {Subscription} from "rxjs";
-import {EventService} from "./event.service";
 
 @Component({
   selector: 'app-root',
@@ -14,10 +13,7 @@ export class AppComponent implements OnDestroy {
   isLoggedIn: boolean = false;
   loginSub: Subscription;
 
-  isCreatingEvent: boolean = false
-  createEventSub: Subscription;
-
-  constructor(private accountService: AccountService, private eventService:EventService) {
+  constructor(private accountService: AccountService) {
 
     //toggle login
     this.loginSub = this.accountService.$isLoggedIn.subscribe((isLogin: boolean) => {
@@ -25,14 +21,14 @@ export class AppComponent implements OnDestroy {
     })
 
     //toggle create event
-    this.createEventSub = this.eventService.$isCreatingEvent.subscribe( (isCreatingEvent: boolean) => {
-      this.isCreatingEvent = isCreatingEvent
-    })
+    // this.createEventSub = this.eventService.$isCreatingEvent.subscribe( (isCreatingEvent: boolean) => {
+    //   this.isCreatingEvent = isCreatingEvent
+    // })
   }
 
   ngOnDestroy(){
     this.loginSub.unsubscribe()
-    this.createEventSub.unsubscribe()
+    // this.createEventSub.unsubscribe()
   }
 
 }
