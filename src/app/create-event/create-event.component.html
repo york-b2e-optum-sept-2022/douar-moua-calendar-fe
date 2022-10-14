@@ -15,11 +15,12 @@
     </div>
 
     <div class="input-group m-3">
-      Invite Users: {{userNameList}}
+      <app-account-list></app-account-list>
     </div>
 
     <div class="container m-3 d-flex justify-content-evenly">
       <button class="btn btn-success" (click)="onCreateEventClick()">Create Event</button>
+      <button class="btn btn-secondary" (click)="onCancelCreateEventClick()">Cancel</button>
     </div>
 
   </div>

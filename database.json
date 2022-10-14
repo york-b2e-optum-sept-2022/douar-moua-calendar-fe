@@ -54,27 +54,21 @@
       "eventDate": "2022-10-13"
     },
     {
-      "id": "4fadae7e-e5a6-478a-9444-79bc230e1038",
+      "id": "239b0cf7-7206-437d-ba5b-72fcd00b3fa3",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 1",
-      "eventDate": "2022-10-14"
+      "eventDate": "2022-10-13"
     },
     {
-      "id": "b76296e2-7052-43c3-9384-81af1b5c29b2",
+      "id": "4fadae7e-e5a6-478a-9444-79bc230e1038",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
       "eventDate": "2022-10-14"
     },
     {
-      "id": "f2dec576-19c5-45a4-85c5-4c3e3ffd1c01",
+      "id": "b76296e2-7052-43c3-9384-81af1b5c29b2",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 3",
-      "eventDate": "2022-10-14"
-    },
-    {
-      "id": "b56e0a86-8f8b-4552-8e45-130b2bc1f81e",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 4",
       "eventDate": "2022-10-14"
     }
   ],

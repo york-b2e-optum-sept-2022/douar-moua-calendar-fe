@@ -14,6 +14,9 @@ export class AppComponent implements OnDestroy {
   isLoggedIn: boolean = false;
   loginSub: Subscription;
 
+  isCreatingEvent: boolean = false
+  createEventSub: Subscription;
+
   constructor(private accountService: AccountService, private eventService:EventService) {
 
     //toggle login
@@ -21,10 +24,15 @@ export class AppComponent implements OnDestroy {
       this.isLoggedIn = isLogin
     })
 
+    //toggle create event
+    this.createEventSub = this.eventService.$isCreatingEvent.subscribe( (isCreatingEvent: boolean) => {
+      this.isCreatingEvent = isCreatingEvent
+    })
   }
 
   ngOnDestroy(){
     this.loginSub.unsubscribe()
+    this.createEventSub.unsubscribe()
   }
 
 }
