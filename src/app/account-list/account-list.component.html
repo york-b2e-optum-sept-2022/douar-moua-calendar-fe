@@ -1,2 +1,10 @@
 <div>List of Users You Can Invite: </div>
-{{users}}
+<div *ngFor="let user of users">
+  {{user}}
+</div>
+
+<!--<div>-->
+<!--  <select>-->
+<!--    <option *ngFor="let user of users">{{user}}</option>-->
+<!--  </select>-->
+<!--</div>-->

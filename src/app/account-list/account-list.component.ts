@@ -21,6 +21,7 @@ export class AccountListComponent implements OnDestroy{
       next: (accountList) => {
         this.accountList = accountList
         this.users = accountList.map(IAccount => IAccount.username)
+        console.log(this.users)
       },
       error: (err) => {
         console.error(err)
