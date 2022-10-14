@@ -47,6 +47,24 @@
       "eventCreatorId": "0438e790-8830-484e-8309-1d1388c39324",
       "eventName": "mouas 3",
       "eventDate": "2022-10-13"
+    },
+    {
+      "id": "b3b793c0-09e7-4a08-87df-040d92d5b831",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "newuser 1",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "b2c79ff9-fc37-4845-8a0e-449b3e41c3c0",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "newuser 2",
+      "eventDate": "2022-10-13"
+    },
+    {
+      "id": "a05d087a-1990-47b4-9776-fdf7e02c3ff7",
+      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
+      "eventName": "newuser 3",
+      "eventDate": "2022-10-13"
     }
   ],
   "invitations": [
