@@ -29,7 +29,6 @@ export class AccountService {
       next: (accountList) => {
         this.accountList = accountList
         this.$accountList.next(accountList)
-        console.log(this.accountList)
       },
       error: (err) => {
         console.error(err)
@@ -45,7 +44,6 @@ export class AccountService {
 
   //facilitate login validation, login, and emit login user data
   onLogin(loginInput: IAccounts){
-    console.log(loginInput)
     //if login username input is blank alert user
     if (loginInput.username == ''){
       alert('Username can not be blank')
@@ -61,7 +59,6 @@ export class AccountService {
     //password validation & login facilitation
     this.httpService.foundAccount(loginInput).pipe(first()).subscribe({
       next: (accountList) => {
-        console.log(accountList)
         //validate password
         const foundAccount = accountList.find(account => account.password === loginInput.password)
         //if password is incorrect alert invalid login
@@ -73,7 +70,6 @@ export class AccountService {
         this.$isLoggedIn.next(this.isLoggedIn)
         this.foundAccount = foundAccount
         this.$foundAccount.next(this.foundAccount)
-        console.log(foundAccount)
       },
       error: (err) => {
         console.error(err)
@@ -97,7 +93,6 @@ export class AccountService {
 
     this.httpService.foundAccount(newAccount).pipe(first()).subscribe({
       next: (accountList) => {
-        // console.log('accountList: ', accountList)
         if (accountList.length > 0) {
           alert("Username already exists")
         }
@@ -108,7 +103,6 @@ export class AccountService {
           username: newAccount.username,
           password: newAccount.password
         }
-        console.log('account: ', typeof account, account)
 
         //add new account to database & create observable for subscription purposes
         this.httpService.registerAccount(account).pipe(first()).subscribe({

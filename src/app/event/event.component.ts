@@ -24,8 +24,6 @@ export class EventComponent {
       next: accountList => {
         this.accountList = accountList
         this.users = accountList.map(IAccount => IAccount.username)
-        console.log(accountList)
-        console.log(this.users)
       },
       error: err => {
         console.error(err)
