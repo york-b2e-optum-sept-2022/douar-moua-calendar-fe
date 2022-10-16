@@ -1,6 +1,8 @@
 import {Component, } from '@angular/core';
 import {IEvents} from "../_interfaces/IEvents";
 import {EventService} from "../event.service";
+import {IAccounts} from "../_interfaces/IAccounts";
+import {AccountService} from "../account.service";
 
 @Component({
   selector: 'app-create-event',
@@ -16,7 +18,19 @@ export class CreateEventComponent {
     eventDate: null,
   }
 
-  constructor(private eventService:EventService) { }
+  accountList: IAccounts[] = []
+
+  constructor(private eventService:EventService, private accountService:AccountService) {
+    this.accountService.$accountList.subscribe({
+      next: (accountList) => {
+        this.accountList = accountList
+      },
+      error: (err) => {
+        console.log(err)
+        alert('Unable to get account list. Please try again later.')
+      }
+    })
+  }
 
   //tell event service to add new event with given new event input
   onCreateEventClick(){

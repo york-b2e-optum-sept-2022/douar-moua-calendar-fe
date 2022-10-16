@@ -14,8 +14,11 @@
       <input type="text" class="form-control" [(ngModel)]="newEvent.eventName">
     </div>
 
-    <div class="container d-flex justify-content-center input-group m-3">
-      <app-account-list></app-account-list>
+    <div class="container d-flex justify-content-evenly input-group">
+      <app-account-list
+        *ngFor="let user of accountList"
+        [accountList] = "user"
+      ></app-account-list>
     </div>
 
     <div class="container m-3 d-flex justify-content-evenly">
