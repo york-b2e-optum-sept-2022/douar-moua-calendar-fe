@@ -18,22 +18,22 @@
   ],
   "events": [
     {
-      "id": "351e1cfb-3677-454e-a426-7b1cab00f293",
+      "id": "a373fa42-918f-4eb2-911d-f2defb927e1f",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 1",
-      "eventDate": "2022-10-14"
+      "eventDate": "2022-10-15"
     },
     {
-      "id": "74cc2b94-b1fc-48c5-a47f-9c1d660d97d5",
+      "id": "2bf4dbb5-87a2-4d3b-8908-35f918d8cfb8",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
-      "eventDate": "2022-10-19"
+      "eventDate": "2022-10-15"
     },
     {
-      "id": "18f8ffa0-2abf-46f4-81a3-fc4fc2f5a7dd",
+      "id": "85095e5e-f356-4c0a-a276-606fc291ce16",
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "5",
-      "eventDate": "2022-10-19"
+      "eventName": "douar 3",
+      "eventDate": "2022-10-15"
     }
   ],
   "invitations": [
