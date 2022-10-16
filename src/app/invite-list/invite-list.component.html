@@ -1,4 +1,4 @@
 <div class="m-1 form-control">
-  <input type="checkbox">
+  <input type="checkbox" (change)="onInviteUserCheck()" [ngModel]="selectedUser">
   <label>&nbsp;{{accountList.username}}</label>
 </div>
