@@ -56,4 +56,9 @@ export class HttpService {
     ) as Observable<IInvitations[]>
   }
 
+  createInvite(invitedUser: IAccounts){
+    return this.httpClient.post('http://localhost:3000/invitations', invitedUser
+    ) as Observable<IInvitations[]>
+  }
+
 }
