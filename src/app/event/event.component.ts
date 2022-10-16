@@ -44,7 +44,7 @@ export class EventComponent {
     //   }
     // })
 
-    //get current user data TODO UNSUB DO I NEED THIS???
+    //get current user data
 
     // this.accountService.$foundAccount.subscribe({
     //   next: (currentUser) => {
@@ -57,7 +57,7 @@ export class EventComponent {
     //   }
     // })
 
-    //get current users invite list specific to event TODO UNSUB
+    //get current users invite list specific to event
 
     // this.inviteService.$inviteList.subscribe({
     //   next: (inviteList) => {
