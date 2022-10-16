@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {IInvitations} from "./_interfaces/IInvitations";
-import {first} from "rxjs";
+import {first, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import {first} from "rxjs";
 export class InviteService {
 
   inviteList: IInvitations[] = []
+  $inviteList = new Subject<IInvitations[]>()
 
   constructor(private httpService: HttpService) { }
 
@@ -17,6 +18,7 @@ export class InviteService {
       next: (inviteList) => {
         this.inviteList = inviteList
         console.log(this.inviteList)
+        this.$inviteList.next(this.inviteList)
       },
       error: err => {
         console.error(err)
