@@ -10,7 +10,8 @@ export class InviteListComponent implements OnInit {
 
   @Input() accountList!: IAccounts;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

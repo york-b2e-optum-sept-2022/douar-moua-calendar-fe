@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
-import {IEvents} from "./_interfaces/IEvents";
 import {IInvitations} from "./_interfaces/IInvitations";
 import {first} from "rxjs";
 
@@ -17,6 +16,7 @@ export class InviteService {
     this.httpService.getInviteList().pipe(first()).subscribe({
       next: (inviteList) => {
         this.inviteList = inviteList
+        console.log(this.inviteList)
       },
       error: err => {
         console.error(err)

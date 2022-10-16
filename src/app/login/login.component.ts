@@ -24,6 +24,7 @@ export class LoginComponent {
     this.eventService.getEventList()
     this.accountService.getAccountList()
     this.inviteService.getInviteList()
+    console.log(this.inviteService.inviteList)
   }
 
 }

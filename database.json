@@ -38,10 +38,14 @@
   ],
   "invitations": [
     {
-      "id": "1",
-      "userName": "user1",
-      "eventName": "eventName",
-      "eventDate": "1/1/2022"
+      "id": "invite id",
+      "username": "invite username",
+      "eventID": "invite eventID"
+    },
+    {
+      "id": "invite id 2",
+      "username": "invite username 2",
+      "eventID": "invite eventID 2"
     }
   ]
 }
