@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {IAccounts} from "./_interfaces/IAccounts";
 import {Observable} from "rxjs";
 import {IEvents} from "./_interfaces/IEvents";
+import {IInvitations} from "./_interfaces/IInvitations";
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,9 @@ export class HttpService {
   }
 
   //INVITES
+  getInviteList(){
+    return this.httpClient.get('http://localhost:3000/invitations'
+    ) as Observable<IInvitations[]>
+  }
 
 }
