@@ -4,7 +4,8 @@ import {IInvitations} from "./_interfaces/IInvitations";
 import {first, Subject, Subscription} from "rxjs";
 import {EventService} from "./event.service";
 import {IEvents} from "./_interfaces/IEvents";
-import * as events from "events";
+// import * as events from "events";
+import {IAccounts} from "./_interfaces/IAccounts";
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,10 @@ export class InviteService implements OnDestroy {
         alert('Unable to load list of invites. Please try again later.')
       }
     })
+  }
+
+  createInvite(invitedUser: IAccounts){
+    this.httpService.createInvite(invitedUser)
   }
 
   ngOnDestroy(){
