@@ -1,7 +1,16 @@
 <div>List of Users You Can Invite: </div>
-<div *ngFor="let user of users">
-  {{user}}
+
+<!--<div *ngFor="let user of users">-->
+<!--  {{user}}-->
+<!--</div>-->
+
+<div class="input-group-text" *ngFor="let user of users">
+  <div>
+    <input type="checkbox">
+    <label>&nbsp;{{user}}</label>
+  </div><br>
 </div>
+
 
 <!--<div>-->
 <!--  <select>-->
