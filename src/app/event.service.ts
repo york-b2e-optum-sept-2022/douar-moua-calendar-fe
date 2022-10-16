@@ -46,7 +46,7 @@ export class EventService implements OnDestroy {
 
   }
 
-  //get event list
+  //get event list - gets called by onLoginClick(), onCreateEvent(), onDeleteEvent()
   getEventList(){
     this.httpService.getEventList().pipe(first()).subscribe({
       next: eventsList => {
@@ -54,6 +54,7 @@ export class EventService implements OnDestroy {
           return this.currentUserId == event.eventCreatorId
         })
         this.$eventList.next(this.eventList)
+        console.log(this.eventList)
       },
       error: (err) => {
         console.error(err)
