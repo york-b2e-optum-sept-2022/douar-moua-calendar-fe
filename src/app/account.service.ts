@@ -23,61 +23,6 @@ export class AccountService {
   constructor(private httpService: HttpService) {
   }
 
-  //get account list from http service
-  getAccountList(){
-    this.httpService.getAccountList().pipe(first()).subscribe({
-      next: (accountList) => {
-        this.accountList = accountList
-        this.$accountList.next(accountList)
-      },
-      error: (err) => {
-        console.error(err)
-        alert('Unable to get list of users. Please try again later.')
-      }
-    })
-  }
-
-  //log out
-  onLogOut(){
-    this.$isLoggedIn.next(!this.isLoggedIn)
-  }
-
-  //facilitate login validation, login, and emit login user data
-  onLogin(loginInput: IAccounts){
-    //if login username input is blank alert user
-    if (loginInput.username == ''){
-      alert('Username can not be blank')
-      return;
-    }
-
-    //if login password input is blank alert user
-    if (loginInput.password == ''){
-      alert('Password can not be blank')
-      return;
-    }
-
-    //password validation & login facilitation
-    this.httpService.foundAccount(loginInput).pipe(first()).subscribe({
-      next: (accountList) => {
-        //validate password
-        const foundAccount = accountList.find(account => account.password === loginInput.password)
-        //if password is incorrect alert invalid login
-        if (!foundAccount){
-          alert('Invalid login')
-          return;
-        }
-        //if password is correct, toggle log in, broadcast/emit current user info
-        this.$isLoggedIn.next(this.isLoggedIn)
-        this.foundAccount = foundAccount
-        this.$foundAccount.next(this.foundAccount)
-      },
-      error: (err) => {
-        console.error(err)
-        alert('Unable to login. Please try again later.')
-      }
-    })
-  }
-
   //facilitate new event validation, create new event, send new event to http service, and emit new event data
   onCreateAccount(newAccount: IAccounts){
     //validate new username requirements
@@ -121,6 +66,61 @@ export class AccountService {
         alert('Unable to create account. Please try again later')
       }
     })
+  }
+
+  //facilitate login validation, login, and emit login user data
+  onLogin(loginInput: IAccounts){
+    //if login username input is blank alert user
+    if (loginInput.username == ''){
+      alert('Username can not be blank')
+      return;
+    }
+
+    //if login password input is blank alert user
+    if (loginInput.password == ''){
+      alert('Password can not be blank')
+      return;
+    }
+
+    //password validation & login facilitation
+    this.httpService.foundAccount(loginInput).pipe(first()).subscribe({
+      next: (accountList) => {
+        //validate password
+        const foundAccount = accountList.find(account => account.password === loginInput.password)
+        //if password is incorrect alert invalid login
+        if (!foundAccount){
+          alert('Invalid login')
+          return;
+        }
+        //if password is correct, toggle log in, broadcast/emit current user info
+        this.$isLoggedIn.next(this.isLoggedIn)
+        this.foundAccount = foundAccount
+        this.$foundAccount.next(this.foundAccount)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to login. Please try again later.')
+      }
+    })
+  }
+
+  //get account list from http service
+  getAccountList(){
+    this.httpService.getAccountList().pipe(first()).subscribe({
+      next: (accountList) => {
+        this.accountList = accountList
+        this.$accountList.next(accountList)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to get list of users. Please try again later.')
+      }
+    })
+  }
+
+  //log out
+  onLogOut(){
+    this.$isLoggedIn.next(!this.isLoggedIn)
   }
 
 
