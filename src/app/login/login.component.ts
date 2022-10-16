@@ -23,6 +23,7 @@ export class LoginComponent {
     this.accountService.onLogin(this.loginAccount)
     this.eventService.getEventList()
     this.accountService.getAccountList()
+    this.inviteService.getInviteList()
   }
 
 }
