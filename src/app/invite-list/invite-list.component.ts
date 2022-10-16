@@ -11,17 +11,17 @@ export class InviteListComponent {
 
   @Input() accountList!: IAccounts;
 
-  selectedUser: IAccounts = {
-    id: '',
-    username: '',
-    password: ''
-  }
+  userIsSelected: boolean = false
 
   constructor(private inviteService: InviteService) {
   }
 
   onInviteUserCheck(){
-    this.inviteService.createInvite()
+    if (this.userIsSelected == true){
+      this.inviteService.createInvite(this.accountList)
+      console.log('box is checked')
+      console.log(this.accountList)
+    }
   }
 
 
