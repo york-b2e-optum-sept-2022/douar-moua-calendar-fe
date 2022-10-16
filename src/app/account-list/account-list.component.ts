@@ -1,7 +1,6 @@
 import {Component, Input, OnDestroy,} from '@angular/core';
 import {AccountService} from "../account.service";
 import {IAccounts} from "../_interfaces/IAccounts";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-account-list',

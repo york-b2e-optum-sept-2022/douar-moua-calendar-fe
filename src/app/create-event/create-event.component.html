@@ -24,9 +24,10 @@
       <ngb-accordion>
         <ngb-panel title="Invite Available Users">
           <ng-template ngbPanelContent>
-            <app-account-list *ngFor="let user of accountList"
-                         [accountList]="user"
-            ></app-account-list>
+            <app-invite-list
+              *ngFor="let user of accountList"
+              [accountList]="user"
+              ></app-invite-list>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>

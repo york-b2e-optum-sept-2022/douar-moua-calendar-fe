@@ -1,6 +1,6 @@
 <div class="card m-3 shadow w-100" style="width: 20rem">
   <div class="card-header bg-success bg-opacity-50">
-    <h3>Event Date: <span *ngIf="isUpdating == false">{{event.eventDate | date: 'shortDate'}}</span> </h3>
+    <h3>Event Date: <span *ngIf="isUpdating == false">{{event.eventDate | date: 'fullDate'}}</span> </h3>
   </div>
   <div class="card-body">
     <label>Event Name: <span *ngIf="isUpdating == false">{{event.eventName}}</span></label>
