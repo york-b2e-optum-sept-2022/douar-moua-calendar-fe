@@ -20,25 +20,16 @@
 <!--        [accountList] = "user"-->
 <!--      ></app-account-list>-->
 <!--    </div>-->
-
-    <div class="accordion w-100">
-      <div class="accordion-item">
-
-        <div class="accordion-header">
-          <button class="accordion-button"
-          >Select and Invite Available Users</button>
-        </div>
-
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <app-account-list
-              *ngFor="let user of accountList"
-              [accountList] = "user"
+    <div class="w-100">
+      <ngb-accordion>
+        <ngb-panel title="Invite Available Users">
+          <ng-template ngbPanelContent>
+            <app-account-list *ngFor="let user of accountList"
+                         [accountList]="user"
             ></app-account-list>
-          </div>
-        </div>
-
-      </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
     </div>
 
     <div class="container m-3 d-flex justify-content-evenly">
