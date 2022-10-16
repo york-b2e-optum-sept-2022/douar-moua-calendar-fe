@@ -21,8 +21,8 @@ export class LoginComponent {
 
   onLoginClick(){
     this.accountService.onLogin(this.loginAccount)
-    this.eventService.getEventList()
     this.accountService.getAccountList()
+    this.eventService.getEventList()
     this.inviteService.getInviteList()
   }
 
