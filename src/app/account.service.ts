@@ -92,7 +92,7 @@ export class AccountService {
           alert('Invalid login')
           return;
         }
-        //if password is correct, toggle log in, broadcast/emit current user info
+        //if password is correct, toggle log in, broadcast/emit current user info, call getAccountList()
         this.$isLoggedIn.next(this.isLoggedIn)
         this.foundAccount = foundAccount
         this.$foundAccount.next(this.foundAccount)
