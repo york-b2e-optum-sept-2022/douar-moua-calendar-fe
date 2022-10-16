@@ -13,6 +13,7 @@ import {IInvitations} from "../_interfaces/IInvitations";
 })
 export class EventComponent {
 
+  //get events as individual events
   @Input() event!: IEvents;
 
   isUpdating: boolean = false
@@ -27,8 +28,9 @@ export class EventComponent {
   }
 
   inviteList: IInvitations[] = []
+  eventInviteList: IInvitations[] = []
 
-  constructor(private eventService: EventService, private accountService: AccountService, private inviteSesrvice: InviteService) {
+  constructor(private eventService: EventService, private accountService: AccountService, private inviteService: InviteService) {
     //get account list TODO UNSUB
     // this.accountService.$accountList.subscribe({
     //   next: accountList => {
@@ -52,7 +54,21 @@ export class EventComponent {
       }
     })
 
-    //get invite list
+    //get current user events invite list TODO UNSUB
+    this.inviteService.$inviteList.subscribe({
+      next: (inviteList) => {
+        this.inviteList = inviteList
+        this.eventInviteList = inviteList.filter((event) => {
+          return this.event.id == event.id
+        })
+        console.log(this.eventInviteList)
+        console.log(this.inviteList)
+      },
+      error: (err) => {
+        console.error(err)
+        alert('Unable to load list of invited users for event. Please try again later.')
+      }
+    })
 
   }
 

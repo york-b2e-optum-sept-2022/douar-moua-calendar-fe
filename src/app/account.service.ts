@@ -96,6 +96,7 @@ export class AccountService {
         this.$isLoggedIn.next(this.isLoggedIn)
         this.foundAccount = foundAccount
         this.$foundAccount.next(this.foundAccount)
+        this.getAccountList()
       },
       error: (err) => {
         console.error(err)
@@ -106,6 +107,7 @@ export class AccountService {
 
   //get account list from http service
   getAccountList(){
+    console.log('get account initiated after account is found')
     this.httpService.getAccountList().pipe(first()).subscribe({
       next: (accountList) => {
         this.accountList = accountList
