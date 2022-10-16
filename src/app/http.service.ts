@@ -11,6 +11,7 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
+  //ACCOUNTS
   foundAccount(loginInput: IAccounts){
     return this.httpClient.get('http://localhost:3000/accounts?username=' + loginInput.username
     ) as Observable<IAccounts[]>
@@ -26,6 +27,8 @@ export class HttpService {
     ) as Observable<IAccounts>;
   }
 
+
+  //EVENTS
   getEventList(){
     return this.httpClient.get('http://localhost:3000/events'
     ) as Observable<IEvents[]>
@@ -45,5 +48,7 @@ export class HttpService {
     return this.httpClient.put<IEvents>('http://localhost:3000/events' + `/${id}`, updateEvent
     )
   }
+
+  //INVITES
 
 }
