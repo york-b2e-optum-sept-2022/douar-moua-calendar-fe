@@ -36,6 +36,16 @@ export class InviteService implements OnDestroy {
   getInviteList(){
     this.httpService.getInviteList().pipe(first()).subscribe({
       next: (inviteList) => {
+
+        console.log(inviteList)
+
+        // const eventIDInviteList: IInvitations[] =
+        // inviteList.filter((invite) =>
+        // { return invite.eventID =
+        // this.currentUserEventList.filter((event) =>
+        // event.id)})
+        // console.log(eventIDInviteList)
+
         this.inviteList = inviteList.filter((invite) => {
           return this.currentUserEventList.filter((event) => {return event.id = invite.eventID})
         })

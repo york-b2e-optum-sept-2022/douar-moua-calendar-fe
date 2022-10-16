@@ -20,19 +20,17 @@ export class EventComponent {
 
   // accountList: IAccounts[] | null = null
   // users!: IAccounts["username"][];
-
   // currentUser: IAccounts = {
   //   id: '',
   //   username: '',
   //   password: ''
   // }
-
   // eventInviteList: IInvitations[] = []
 
-  @Input() invite!: IInvitations;
+  @Input() invite!: IInvitations[];
 
   constructor(private eventService: EventService, private accountService: AccountService, private inviteService: InviteService) {
-    //get account list TODO UNSUB
+    //get account list
     // this.accountService.$accountList.subscribe({
     //   next: accountList => {
     //     this.accountList = accountList
@@ -45,7 +43,6 @@ export class EventComponent {
     // })
 
     //get current user data
-
     // this.accountService.$foundAccount.subscribe({
     //   next: (currentUser) => {
     //     this.currentUser = currentUser
@@ -58,7 +55,6 @@ export class EventComponent {
     // })
 
     //get current users invite list specific to event
-
     // this.inviteService.$inviteList.subscribe({
     //   next: (inviteList) => {
     //     this.eventInviteList = inviteList

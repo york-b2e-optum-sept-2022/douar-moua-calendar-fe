@@ -16,8 +16,7 @@
       <ngb-panel *ngFor="let event of eventsList" title="{{event.eventName | slice:0:3}} - {{event.eventDate | date: 'shortDate'}}">
         <ng-template ngbPanelContent>
           <app-event
-            *ngFor="let invite of eventInviteList"
-            [invite]="invite"
+            [invite]="eventInviteList"
             [event]="event"
           ></app-event>
         </ng-template>
