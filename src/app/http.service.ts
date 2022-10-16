@@ -16,14 +16,14 @@ export class HttpService {
     ) as Observable<IAccounts[]>
   }
 
-  registerAccount(newAccount: IAccounts){
-    return this.httpClient.post('http://localhost:3000/accounts', newAccount
-    ) as Observable<IAccounts>;
-  }
-
   getAccountList(){
     return this.httpClient.get('http://localhost:3000/accounts'
     ) as Observable<IAccounts[]>
+  }
+
+  registerAccount(newAccount: IAccounts){
+    return this.httpClient.post('http://localhost:3000/accounts', newAccount
+    ) as Observable<IAccounts>;
   }
 
   getEventList(){
