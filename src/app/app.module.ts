@@ -12,6 +12,7 @@ import { EventComponent } from './event/event.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { AccountListComponent } from './account-list/account-list.component';
+import { InviteListComponent } from './invite-list/invite-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AccountListComponent } from './account-list/account-list.component';
     EventComponent,
     EventListComponent,
     CreateEventComponent,
-    AccountListComponent
+    AccountListComponent,
+    InviteListComponent
   ],
   imports: [
     BrowserModule,
