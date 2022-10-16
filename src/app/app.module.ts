@@ -11,7 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EventComponent } from './event/event.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { CreateEventComponent } from './create-event/create-event.component';
-import { AccountListComponent } from './account-list/account-list.component';
+import { AccountListComponent } from './invite-list/account-list.component';
 
 @NgModule({
   declarations: [
