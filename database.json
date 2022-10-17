@@ -6,14 +6,9 @@
       "password": "douar"
     },
     {
-      "id": "0438e790-8830-484e-8309-1d1388c39324",
+      "id": "059b0f0a-2381-4c58-8b01-de141ae519d9",
       "username": "mouas",
       "password": "mouas"
-    },
-    {
-      "id": "ac560592-066b-4ccb-aeb2-b237f5064613",
-      "username": "new user",
-      "password": "new user"
     }
   ],
   "events": [
@@ -22,36 +17,6 @@
       "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
       "eventName": "douar 2",
       "eventDate": "2022-10-15"
-    },
-    {
-      "id": "85095e5e-f356-4c0a-a276-606fc291ce16",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "douar 3",
-      "eventDate": "2022-10-15"
-    },
-    {
-      "id": "83db7e26-7351-4185-9a7e-fffaeaa823b7",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "testing",
-      "eventDate": "2022-10-18"
-    },
-    {
-      "id": "c16072d8-2845-4028-a835-9eee42150d0a",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "Birthdays",
-      "eventDate": "2022-10-18"
-    },
-    {
-      "id": "bace8c0f-671b-4aa0-ab91-a2a84ef3ded6",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "new name",
-      "eventDate": "2022-10-17"
-    },
-    {
-      "id": "1d3f86f6-6778-422e-aace-5f7364053384",
-      "eventCreatorId": "b636802b-28e6-4729-846a-1981d4067821",
-      "eventName": "test date change",
-      "eventDate": "2022-12-02"
     }
   ],
   "invitations": [
