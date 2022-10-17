@@ -49,7 +49,10 @@ export class EventListComponent implements OnDestroy {
   }
 
   filterEventList(){
-    this.eventService.getFilteredEventList()
+    this.eventService.getFilteredEventList(this.startDate, this.endDate)
+    console.log('button is clicked')
+    console.log(this.startDate, this.endDate)
+    //SUBSCRIBE TO THE NEW LIST AFTER HERE
   }
 
   ngOnDestroy() {
