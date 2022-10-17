@@ -1,3 +1,4 @@
+<div class="container d-flex justify-content-center">
 <div class="card m-3 shadow w-100" style="width: 20rem">
   <div class="card-header bg-success bg-opacity-50">
     <h3>Event Date: <span *ngIf="isUpdating == false">{{event.eventDate | date: 'fullDate'}}</span> </h3>
@@ -18,4 +19,5 @@
       <button class="btn btn-secondary" (click)="onCancelEditEventClick()">Cancel</button>
     </div>
   </div>
+</div>
 </div>
