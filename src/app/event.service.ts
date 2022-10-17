@@ -18,9 +18,6 @@ export class EventService implements OnDestroy {
   eventList: IEvents[] = []
   $eventList = new Subject<IEvents[]>();
 
-  filterEventList: IEvents[] = []
-  $filterEventList = new Subject()
-
   eventDeleted!: IEvents;
   $eventDeleted = new Subject<IEvents>();
 
@@ -64,14 +61,6 @@ export class EventService implements OnDestroy {
         alert('Unable to get list of events. Please try again later.')
       }
     });
-  }
-
-  getFilteredEventList(startDate: Date, endDate: Date){
-    this.filterEventList = this.eventList.filter((event) => {
-      return event.eventDate >= startDate && event.eventDate<= endDate
-    })
-    this.$filterEventList.next(this.filterEventList)
-    console.log(this.filterEventList)
   }
 
   //create a new event

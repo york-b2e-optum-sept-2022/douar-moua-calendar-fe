@@ -30,6 +30,7 @@
 <!--    ></app-event>-->
 <!--  </div>-->
 
+  <div *ngIf="isFilterEvent == false">
   <div class="w-100">
     <ngb-accordion>
       <ngb-panel *ngFor="let event of eventsList" title="{{event.eventName | slice:0:3}} - {{event.eventDate | date: 'shortDate'}}">
@@ -41,6 +42,22 @@
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
+  </div>
+  </div>
+
+  <div *ngIf="isFilterEvent == true">
+    <div class="w-100">
+      <ngb-accordion>
+        <ngb-panel *ngFor="let event of filteredEventList" title="{{event.eventName | slice:0:3}} - {{event.eventDate | date: 'shortDate'}}">
+          <ng-template ngbPanelContent>
+            <app-event
+              [invite]="eventInviteList"
+              [event]="event"
+            ></app-event>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
   </div>
 
 </div>

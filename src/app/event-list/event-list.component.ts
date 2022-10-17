@@ -15,6 +15,10 @@ export class EventListComponent implements OnDestroy {
   eventsList: IEvents[] = []
   eventListSub: Subscription;
 
+  isFilterEvent: boolean = false
+  filteredEventList: IEvents[] = []
+  // filteredEventListSub: Subscription;
+
   eventInviteList: IInvitations[] = []
 
   startDate: Date = new Date()
@@ -49,10 +53,17 @@ export class EventListComponent implements OnDestroy {
   }
 
   filterEventList(){
-    this.eventService.getFilteredEventList(this.startDate, this.endDate)
+    // this.eventService.getFilteredEventList()
     console.log('button is clicked')
     console.log(this.startDate, this.endDate)
     //SUBSCRIBE TO THE NEW LIST AFTER HERE
+
+    this.filteredEventList = this.eventsList.filter((event) => {
+          return event.eventDate >= this.startDate && event.eventDate<= this.endDate
+        })
+    this.isFilterEvent = true
+
+    console.log(this.filteredEventList)
   }
 
   ngOnDestroy() {
