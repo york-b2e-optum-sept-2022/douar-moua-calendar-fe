@@ -17,7 +17,7 @@ export class InviteListComponent {
   }
 
   onInviteUserCheck(){
-    if (this.userIsSelected == true){
+    if (this.userIsSelected){
       this.inviteService.createInvite(this.accountList)
       console.log('box is checked')
       console.log(this.accountList)
