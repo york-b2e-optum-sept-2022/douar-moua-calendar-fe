@@ -4,6 +4,6 @@ export interface IEvents{
   id: string,
   eventCreatorId: string
   eventName: string,
-  eventDate: Date | null
+  eventDate: Date
   // inviteList: IInvitations[]
 }
