@@ -52,18 +52,16 @@ export class EventListComponent implements OnDestroy {
 
   }
 
-  filterEventList(){
-    // this.eventService.getFilteredEventList()
-    console.log('button is clicked')
-    console.log(this.startDate, this.endDate)
-    //SUBSCRIBE TO THE NEW LIST AFTER HERE
-
-    this.filteredEventList = this.eventsList.filter((event) => {
-          return event.eventDate >= this.startDate && event.eventDate<= this.endDate
-        })
-    this.isFilterEvent = true
-
-    console.log(this.filteredEventList)
+  filterEventList() {
+    if (this.startDate > this.endDate) {
+      alert('Start date must be before end date! Please select valid date ranges')
+      return
+    } else {
+      this.filteredEventList = this.eventsList.filter((event) => {
+        return event.eventDate >= this.startDate && event.eventDate <= this.endDate
+      })
+      this.isFilterEvent = true
+    }
   }
 
   ngOnDestroy() {
