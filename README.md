@@ -25,4 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-<img width="1943" alt="douar-moua-calendar-fe" src="https://www.figma.com/file/i8BjvhHZe8RrprU70lKA36/douar-moua-calendar-fe?node-id=0%3A1">
+
+
+<img width="3367" alt="douar-moua-calendar-fe (1)" src="https://user-images.githubusercontent.com/113075230/196100467-b98b685f-0513-4d82-bac2-e1f652ccc9a1.png">
