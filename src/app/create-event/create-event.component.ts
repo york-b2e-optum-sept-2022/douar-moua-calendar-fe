@@ -18,9 +18,11 @@ export class CreateEventComponent {
     eventDate: new Date(),
   }
 
+  //get account list from constructor for invite feature purpose
   accountList: IAccounts[] = []
 
   constructor(private eventService:EventService, private accountService:AccountService) {
+
     this.accountService.$accountList.subscribe({
       next: (accountList) => {
         this.accountList = accountList
@@ -32,7 +34,6 @@ export class CreateEventComponent {
     })
   }
 
-  //tell event service to add new event with given new event input
   onCreateEventClick(){
     this.eventService.onCreateEvent(this.newEvent)
   }
