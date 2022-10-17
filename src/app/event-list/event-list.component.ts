@@ -17,7 +17,6 @@ export class EventListComponent implements OnDestroy {
 
   isFilterEvent: boolean = false
   filteredEventList: IEvents[] = []
-  // filteredEventListSub: Subscription;
 
   eventInviteList: IInvitations[] = []
 
