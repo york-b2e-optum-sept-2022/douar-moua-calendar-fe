@@ -64,6 +64,11 @@ export class EventListComponent implements OnDestroy {
     }
   }
 
+  resetEventsList(){
+    this.eventService.getEventList()
+    this.isFilterEvent = false
+  }
+
   ngOnDestroy() {
     this.eventListSub.unsubscribe()
   }

@@ -18,8 +18,11 @@
         <input class="m-1" type="date" [(ngModel)]="endDate">
       </span>
     </div>
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-evenly mb-3">
       <button class="btn btn-primary w-25" (click)="filterEventList()">Search</button>
+    </div>
+    <div class="d-flex justify-content-evenly mb-3">
+    <button class="btn btn-primary" (click)="resetEventsList()">Rest Events List</button>
     </div>
   </div>
 
