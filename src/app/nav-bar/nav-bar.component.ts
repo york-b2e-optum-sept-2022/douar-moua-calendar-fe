@@ -15,10 +15,10 @@ export class NavBarComponent {
     username: '',
     password: ''
   }
-
   userAccountSub: Subscription;
 
   constructor(private accountService: AccountService) {
+    //get current logged in user data onto local variable - NOT WORKING?
     this.userAccountSub = this.accountService.$foundAccount.subscribe({
       next: (foundAccount) => {
         this.currentUser = foundAccount

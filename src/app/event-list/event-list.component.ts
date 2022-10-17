@@ -15,18 +15,17 @@ export class EventListComponent implements OnDestroy {
   eventsList: IEvents[] = []
   eventListSub: Subscription;
 
+  startDate: Date = new Date()
+  endDate: Date = new Date()
   isFilterEvent: boolean = false
   filteredEventList: IEvents[] = []
 
   eventInviteList: IInvitations[] = []
 
-  startDate: Date = new Date()
-  endDate: Date = new Date()
-
 
   constructor(private eventService: EventService, private inviteService: InviteService) {
 
-    // get event list from event service
+    //get users entire event list from event service onto local variable
     this.eventListSub = this.eventService.$eventList.subscribe({
       next: (eventList) => {
         this.eventsList = eventList
@@ -38,6 +37,7 @@ export class EventListComponent implements OnDestroy {
       }
     });
 
+    //invite feature attempt - fail - circle back
     this.inviteService.$inviteList.subscribe({
       next: (inviteList) => {
         this.eventInviteList = inviteList

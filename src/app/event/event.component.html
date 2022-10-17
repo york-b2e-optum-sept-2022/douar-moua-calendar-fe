@@ -2,7 +2,7 @@
 <div class="card m-3 shadow w-100" style="width: 20rem">
   <div class="card-header bg-success bg-opacity-50">
     <h3>Event Date:
-      <span *ngIf="isUpdating == false">{{event.eventDate | date: 'fullDate'}}</span>
+      <span *ngIf="isUpdating == false"> {{event.eventDate | date: 'fullDate'}}</span>
       <input *ngIf="isUpdating == true" type="date" [(ngModel)]="event.eventDate">
     </h3>
   </div>

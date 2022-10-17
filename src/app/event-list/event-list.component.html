@@ -4,6 +4,7 @@
     <h1 class="display-3 m-3">Manage List of Events</h1>
   </div>
 
+<!--  filter events-->
   <div class="card m-3">
     <div class="card-header">
       <h4 class="text-center">Search for events by date range</h4>
@@ -26,6 +27,7 @@
     </div>
   </div>
 
+<!--  show entire list of events-->
   <div *ngIf="isFilterEvent == false" class="w-100">
     <ngb-accordion>
       <ngb-panel *ngFor="let event of eventsList"
@@ -40,7 +42,8 @@
     </ngb-accordion>
   </div>
 
-    <div *ngIf="isFilterEvent == true" class="w-100">
+<!--  show filtered list of events-->
+  <div *ngIf="isFilterEvent == true" class="w-100">
       <ngb-accordion>
         <ngb-panel *ngFor="let event of filteredEventList" title="{{event.eventName | slice:0:3}} - {{event.eventDate | date: 'shortDate'}}">
           <ng-template ngbPanelContent>
