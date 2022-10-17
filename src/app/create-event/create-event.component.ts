@@ -15,7 +15,7 @@ export class CreateEventComponent {
     id: '',
     eventCreatorId: '',
     eventName: '',
-    eventDate: null,
+    eventDate: new Date(),
   }
 
   accountList: IAccounts[] = []
