@@ -17,6 +17,9 @@ export class EventListComponent implements OnDestroy {
 
   eventInviteList: IInvitations[] = []
 
+  startDate: Date = new Date()
+  endDate: Date = new Date()
+
 
   constructor(private eventService: EventService, private inviteService: InviteService) {
 
@@ -43,6 +46,10 @@ export class EventListComponent implements OnDestroy {
       }
     })
 
+  }
+
+  filterEventList(){
+    this.eventService.getFilteredEventList()
   }
 
   ngOnDestroy() {

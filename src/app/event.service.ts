@@ -63,6 +63,10 @@ export class EventService implements OnDestroy {
     });
   }
 
+  getFilteredEventList(){
+
+  }
+
   //create a new event
   onCreateEvent(newEvent: IEvents){
     //if new event doesn't have a date alert & return
